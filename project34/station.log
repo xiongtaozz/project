@@ -1,0 +1,189 @@
+2017-02-04 00:08:41 [scrapy] INFO: Scrapy 1.0.5 started (bot: project34)
+2017-02-04 00:08:41 [scrapy] INFO: Optional features available: ssl, http11
+2017-02-04 00:08:41 [scrapy] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'project34.spiders', 'LOG_LEVEL': 'INFO', 'SPIDER_MODULES': ['project34.spiders'], 'BOT_NAME': 'project34', 'LOG_FILE': 'station.log', 'DOWNLOAD_DELAY': 0.25}
+2017-02-04 00:08:41 [scrapy] INFO: Enabled extensions: CloseSpider, TelnetConsole, LogStats, CoreStats, SpiderState
+2017-02-04 00:08:41 [AgencysSpider] INFO: AgencysSpider. this turn 17200
+2017-02-04 00:08:41 [scrapy] INFO: Enabled downloader middlewares: HttpAuthMiddleware, DownloadTimeoutMiddleware, UserAgentMiddleware, RetryMiddleware, DefaultHeadersMiddleware, MetaRefreshMiddleware, HttpCompressionMiddleware, RedirectMiddleware, CookiesMiddleware, ChunkedTransferMiddleware, DownloaderStats
+2017-02-04 00:08:41 [scrapy] INFO: Enabled spider middlewares: HttpErrorMiddleware, OffsiteMiddleware, RefererMiddleware, UrlLengthMiddleware, DepthMiddleware
+2017-02-04 00:08:41 [scrapy] INFO: Enabled item pipelines: AgencySQLPipeline
+2017-02-04 00:08:41 [scrapy] INFO: Spider opened
+2017-02-04 00:08:41 [scrapy] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2017-02-04 00:08:41 [py.warnings] WARNING: /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/service_identity/pyopenssl.py:97: SubjectAltNameWarning: Certificate has no `subjectAltName`, falling back to check for a `commonName` for now.  This feature is being removed by major browsers and deprecated by RFC 2818.
+  SubjectAltNameWarning
+
+2017-02-04 00:08:43 [py.warnings] WARNING: /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/pymysql/cursors.py:158: Warning: Data truncated for column 'county' at row 1
+  result = self._query(query)
+
+2017-02-04 00:08:51 [py.warnings] WARNING: /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/pymysql/cursors.py:158: Warning: Duplicate entry '17200' for key 'PRIMARY'
+  result = self._query(query)
+
+2017-02-04 00:08:54 [scrapy] INFO: Closing spider (finished)
+2017-02-04 00:08:54 [scrapy] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 13709,
+ 'downloader/request_count': 32,
+ 'downloader/request_method_count/GET': 32,
+ 'downloader/response_bytes': 696494,
+ 'downloader/response_count': 32,
+ 'downloader/response_status_count/200': 32,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2017, 2, 3, 16, 8, 54, 250231),
+ 'item_scraped_count': 12364,
+ 'log_count/INFO': 8,
+ 'log_count/WARNING': 12223,
+ 'request_depth_max': 1,
+ 'response_received_count': 32,
+ 'scheduler/dequeued': 32,
+ 'scheduler/dequeued/disk': 32,
+ 'scheduler/enqueued': 32,
+ 'scheduler/enqueued/disk': 32,
+ 'start_time': datetime.datetime(2017, 2, 3, 16, 8, 41, 170543)}
+2017-02-04 00:08:54 [scrapy] INFO: Spider closed (finished)
+2017-02-04 00:08:54 [scrapy] INFO: Enabled extensions: CloseSpider, TelnetConsole, LogStats, CoreStats, SpiderState
+2017-02-04 00:08:54 [StationsSpider] INFO: StationsSpider. this turn 17200
+2017-02-04 00:08:54 [scrapy] INFO: Enabled downloader middlewares: HttpAuthMiddleware, DownloadTimeoutMiddleware, UserAgentMiddleware, DownloaderMiddleware, RetryMiddleware, DefaultHeadersMiddleware, MetaRefreshMiddleware, HttpCompressionMiddleware, RedirectMiddleware, CookiesMiddleware, ChunkedTransferMiddleware, DownloaderStats
+2017-02-04 00:08:54 [scrapy] INFO: Enabled spider middlewares: HttpErrorMiddleware, OffsiteMiddleware, RefererMiddleware, UrlLengthMiddleware, DepthMiddleware
+2017-02-04 00:08:54 [scrapy] INFO: Enabled item pipelines: StationSQLPipeline
+2017-02-04 00:08:54 [scrapy] INFO: Spider opened
+2017-02-04 00:08:54 [scrapy] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2017-02-04 00:09:06 [scrapy] INFO: Closing spider (finished)
+2017-02-04 00:09:06 [scrapy] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 11189,
+ 'downloader/request_count': 37,
+ 'downloader/request_method_count/GET': 37,
+ 'downloader/response_bytes': 853814,
+ 'downloader/response_count': 37,
+ 'downloader/response_status_count/200': 37,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2017, 2, 3, 16, 9, 6, 154864),
+ 'item_scraped_count': 3450,
+ 'log_count/INFO': 8,
+ 'log_count/WARNING': 1,
+ 'request_depth_max': 1,
+ 'response_received_count': 37,
+ 'scheduler/dequeued': 37,
+ 'scheduler/dequeued/disk': 37,
+ 'scheduler/enqueued': 37,
+ 'scheduler/enqueued/disk': 37,
+ 'start_time': datetime.datetime(2017, 2, 3, 16, 8, 54, 284814)}
+2017-02-04 00:09:06 [scrapy] INFO: Spider closed (finished)
+2017-02-04 00:09:06 [scrapy] INFO: Enabled extensions: CloseSpider, TelnetConsole, LogStats, CoreStats, SpiderState
+2017-02-04 00:09:06 [ScheduleSpider] INFO: ScheduleSpider. this turn 17200
+2017-02-04 00:09:06 [scrapy] INFO: Enabled downloader middlewares: HttpAuthMiddleware, DownloadTimeoutMiddleware, UserAgentMiddleware, RetryMiddleware, DefaultHeadersMiddleware, MetaRefreshMiddleware, HttpCompressionMiddleware, RedirectMiddleware, CookiesMiddleware, ChunkedTransferMiddleware, DownloaderStats
+2017-02-04 00:09:06 [scrapy] INFO: Enabled spider middlewares: HttpErrorMiddleware, OffsiteMiddleware, RefererMiddleware, UrlLengthMiddleware, DepthMiddleware
+2017-02-04 00:09:06 [scrapy] INFO: Enabled item pipelines: TrainSQLPipeline
+2017-02-04 00:09:06 [scrapy] INFO: Spider opened
+2017-02-04 00:09:06 [scrapy] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2017-02-04 00:09:06 [py.warnings] WARNING: /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/pymysql/cursors.py:158: Warning: Duplicate entry '0000-17200' for key 'PRIMARY'
+  result = self._query(query)
+
+2017-02-04 00:09:12 [py.warnings] WARNING: /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/pymysql/cursors.py:158: Warning: Duplicate entry 'D9981-17200' for key 'PRIMARY'
+  result = self._query(query)
+
+2017-02-04 00:09:12 [py.warnings] WARNING: /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/pymysql/cursors.py:158: Warning: Duplicate entry 'D9982-17200' for key 'PRIMARY'
+  result = self._query(query)
+
+2017-02-04 00:10:06 [scrapy] INFO: Crawled 193 pages (at 193 pages/min), scraped 10849 items (at 10849 items/min)
+2017-02-04 00:11:06 [scrapy] INFO: Crawled 387 pages (at 194 pages/min), scraped 12239 items (at 1390 items/min)
+2017-02-04 00:12:06 [scrapy] INFO: Crawled 584 pages (at 197 pages/min), scraped 13443 items (at 1204 items/min)
+2017-02-04 00:13:06 [scrapy] INFO: Crawled 776 pages (at 192 pages/min), scraped 14660 items (at 1217 items/min)
+2017-02-04 00:14:06 [scrapy] INFO: Crawled 972 pages (at 196 pages/min), scraped 15975 items (at 1315 items/min)
+2017-02-04 00:15:06 [scrapy] INFO: Crawled 1171 pages (at 199 pages/min), scraped 17546 items (at 1571 items/min)
+2017-02-04 00:16:06 [scrapy] INFO: Crawled 1365 pages (at 194 pages/min), scraped 19339 items (at 1793 items/min)
+2017-02-04 00:17:06 [scrapy] INFO: Crawled 1558 pages (at 193 pages/min), scraped 21371 items (at 2032 items/min)
+2017-02-04 00:17:06 [py.warnings] WARNING: /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/pymysql/cursors.py:158: Warning: Out of range value for column 'stopover_time' at row 1
+  result = self._query(query)
+
+2017-02-04 00:18:06 [scrapy] INFO: Crawled 1753 pages (at 195 pages/min), scraped 23612 items (at 2241 items/min)
+2017-02-04 00:19:06 [scrapy] INFO: Crawled 1949 pages (at 196 pages/min), scraped 25136 items (at 1524 items/min)
+2017-02-04 00:20:06 [scrapy] INFO: Crawled 2145 pages (at 196 pages/min), scraped 27301 items (at 2165 items/min)
+2017-02-04 00:21:06 [scrapy] INFO: Crawled 2333 pages (at 188 pages/min), scraped 28965 items (at 1664 items/min)
+2017-02-04 00:22:06 [scrapy] INFO: Crawled 2531 pages (at 198 pages/min), scraped 30517 items (at 1552 items/min)
+2017-02-04 00:23:06 [scrapy] INFO: Crawled 2725 pages (at 194 pages/min), scraped 31815 items (at 1298 items/min)
+2017-02-04 00:24:06 [scrapy] INFO: Crawled 2920 pages (at 195 pages/min), scraped 33366 items (at 1551 items/min)
+2017-02-04 00:25:06 [scrapy] INFO: Crawled 3113 pages (at 193 pages/min), scraped 34862 items (at 1496 items/min)
+2017-02-04 00:26:06 [scrapy] INFO: Crawled 3312 pages (at 199 pages/min), scraped 36463 items (at 1601 items/min)
+2017-02-04 00:27:06 [scrapy] INFO: Crawled 3507 pages (at 195 pages/min), scraped 37966 items (at 1503 items/min)
+2017-02-04 00:28:06 [scrapy] INFO: Crawled 3703 pages (at 196 pages/min), scraped 39212 items (at 1246 items/min)
+2017-02-04 00:29:06 [scrapy] INFO: Crawled 3899 pages (at 196 pages/min), scraped 41360 items (at 2148 items/min)
+2017-02-04 00:30:06 [scrapy] INFO: Crawled 4097 pages (at 198 pages/min), scraped 43715 items (at 2355 items/min)
+2017-02-04 00:31:06 [scrapy] INFO: Crawled 4294 pages (at 197 pages/min), scraped 45935 items (at 2220 items/min)
+2017-02-04 00:32:06 [scrapy] INFO: Crawled 4491 pages (at 197 pages/min), scraped 48472 items (at 2537 items/min)
+2017-02-04 00:33:06 [scrapy] INFO: Crawled 4690 pages (at 199 pages/min), scraped 49906 items (at 1434 items/min)
+2017-02-04 00:34:06 [scrapy] INFO: Crawled 4887 pages (at 197 pages/min), scraped 52087 items (at 2181 items/min)
+2017-02-04 00:35:06 [scrapy] INFO: Crawled 5083 pages (at 196 pages/min), scraped 54787 items (at 2700 items/min)
+2017-02-04 00:36:06 [scrapy] INFO: Crawled 5273 pages (at 190 pages/min), scraped 56560 items (at 1773 items/min)
+2017-02-04 00:37:06 [scrapy] INFO: Crawled 5472 pages (at 199 pages/min), scraped 60117 items (at 3557 items/min)
+2017-02-04 00:38:06 [scrapy] INFO: Crawled 5669 pages (at 197 pages/min), scraped 64044 items (at 3927 items/min)
+2017-02-04 00:39:06 [scrapy] INFO: Crawled 5864 pages (at 195 pages/min), scraped 66965 items (at 2921 items/min)
+2017-02-04 00:40:06 [scrapy] INFO: Crawled 6061 pages (at 197 pages/min), scraped 70002 items (at 3037 items/min)
+2017-02-04 00:41:06 [scrapy] INFO: Crawled 6255 pages (at 194 pages/min), scraped 73304 items (at 3302 items/min)
+2017-02-04 00:42:06 [scrapy] INFO: Crawled 6449 pages (at 194 pages/min), scraped 76231 items (at 2927 items/min)
+2017-02-04 00:43:06 [scrapy] INFO: Crawled 6646 pages (at 197 pages/min), scraped 80034 items (at 3803 items/min)
+2017-02-04 00:44:06 [scrapy] INFO: Crawled 6838 pages (at 192 pages/min), scraped 83400 items (at 3366 items/min)
+2017-02-04 00:45:06 [scrapy] INFO: Crawled 7033 pages (at 195 pages/min), scraped 86288 items (at 2888 items/min)
+2017-02-04 00:46:06 [scrapy] INFO: Crawled 7227 pages (at 194 pages/min), scraped 89004 items (at 2716 items/min)
+2017-02-04 00:47:06 [scrapy] INFO: Crawled 7418 pages (at 191 pages/min), scraped 91223 items (at 2219 items/min)
+2017-02-04 00:47:06 [scrapy] INFO: Closing spider (finished)
+2017-02-04 00:47:06 [scrapy] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 4079518,
+ 'downloader/request_count': 7419,
+ 'downloader/request_method_count/GET': 7419,
+ 'downloader/response_bytes': 9848745,
+ 'downloader/response_count': 7419,
+ 'downloader/response_status_count/200': 7419,
+ 'dupefilter/filtered': 2006,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2017, 2, 3, 16, 47, 6, 499448),
+ 'item_scraped_count': 91256,
+ 'log_count/INFO': 46,
+ 'log_count/WARNING': 4,
+ 'request_depth_max': 1,
+ 'response_received_count': 7419,
+ 'scheduler/dequeued': 7419,
+ 'scheduler/dequeued/disk': 7419,
+ 'scheduler/enqueued': 7419,
+ 'scheduler/enqueued/disk': 7419,
+ 'start_time': datetime.datetime(2017, 2, 3, 16, 9, 6, 163398)}
+2017-02-04 00:47:06 [scrapy] INFO: Spider closed (finished)
+2017-02-04 00:47:06 [scrapy] INFO: Enabled extensions: CloseSpider, TelnetConsole, LogStats, CoreStats, SpiderState
+2017-02-04 00:47:06 [TicketsSpider] INFO: TicketsSpider. this turn 17200
+2017-02-04 00:47:06 [scrapy] INFO: Enabled downloader middlewares: HttpAuthMiddleware, DownloadTimeoutMiddleware, UserAgentMiddleware, RetryMiddleware, DefaultHeadersMiddleware, MetaRefreshMiddleware, HttpCompressionMiddleware, RedirectMiddleware, CookiesMiddleware, ChunkedTransferMiddleware, DownloaderStats
+2017-02-04 00:47:06 [scrapy] INFO: Enabled spider middlewares: HttpErrorMiddleware, OffsiteMiddleware, RefererMiddleware, UrlLengthMiddleware, DepthMiddleware
+2017-02-04 00:47:06 [scrapy] INFO: Enabled item pipelines: TicketSQLPipeline
+2017-02-04 00:47:06 [scrapy] INFO: Spider opened
+2017-02-04 00:47:06 [scrapy] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2017-02-04 00:47:07 [scrapy] ERROR: Spider error processing <GET https://kyfw.12306.cn/otn/resources/js/framework/station_name.js?station_version=1.8936> (referer: None)
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/scrapy/spidermiddlewares/offsite.py", line 28, in process_spider_output
+    for x in result:
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/scrapy/spidermiddlewares/referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/scrapy/spidermiddlewares/depth.py", line 54, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Users/MacRoot/PycharmProjects/12306_spider/35/project34/project34/spiders/tickets.py", line 79, in parse
+    item["name"] = station[1]
+TypeError: 'ItemMeta' object does not support item assignment
+2017-02-04 00:47:07 [scrapy] INFO: Closing spider (finished)
+2017-02-04 00:47:07 [scrapy] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 276,
+ 'downloader/request_count': 1,
+ 'downloader/request_method_count/GET': 1,
+ 'downloader/response_bytes': 47853,
+ 'downloader/response_count': 1,
+ 'downloader/response_status_count/200': 1,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2017, 2, 3, 16, 47, 7, 46478),
+ 'log_count/ERROR': 1,
+ 'log_count/INFO': 8,
+ 'response_received_count': 1,
+ 'scheduler/dequeued': 1,
+ 'scheduler/dequeued/disk': 1,
+ 'scheduler/enqueued': 1,
+ 'scheduler/enqueued/disk': 1,
+ 'spider_exceptions/TypeError': 1,
+ 'start_time': datetime.datetime(2017, 2, 3, 16, 47, 6, 546387)}
+2017-02-04 00:47:07 [scrapy] INFO: Spider closed (finished)
