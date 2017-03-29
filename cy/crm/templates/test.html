@@ -1,0 +1,272 @@
+{% extends "base.html" %}
+
+{% load i18n %}/span>
+
+{% block title %}My budget{% endblock %}
+
+{% block content %}
+     {% load staticfiles %}
+    <style type="text/css">
+
+        .disid, .disnumd, .discompanyd, .distyped, .disyeard, .dismonthd,.discruser,.discrdate,.disline,.discruserd,.discrdated {
+            width: 100px;
+            display: none;
+
+        }
+
+        input, select {
+            width: 100%;
+        }
+        .amt {
+            width: 100px;
+        }
+
+        table {
+            text-align: center;
+            font-size: 12px;
+
+        }
+
+
+    </style>
+    <script src=" {% static 'js/formatCurrency-1.4.0.js' %}" type="text/javascript" ></script>
+    <script src=" {% static 'js/budget.js' %}" type="text/javascript" ></script>
+<script>
+
+index = 0;
+
+
+window.onload = jia;
+
+function jia() {
+var idnum = document.getElementById("id_num");
+idnum.value={{ num|safe }};
+var company = document.getElementById("id_company");
+var type = document.getElementById("id_type");
+var year = document.getElementById("id_year");
+var month = document.getElementById("id_month");
+var cruser = document.getElementById("id_cruser");
+var crdate = document.getElementById("id_crdate");
+
+var x = document.getElementById("ta2").insertRow(-1);
+var y1 = x.insertCell(0);
+var y2 = x.insertCell(1);
+var y3 = x.insertCell(2);
+var y4 = x.insertCell(3);
+var i10 = document.createElement("input");
+var i11 = document.createElement("input");
+var i12 = document.createElement("input");
+var i13 = document.createElement("input");
+var i14 = document.createElement("input");
+var i15 = document.createElement("input");
+var i16 = document.createElement("input");
+var i17 = document.createElement("input");
+var i2 = document.createElement("select");
+var i3 = document.createElement("select");
+var i4 = document.createElement("input");
+
+i10.setAttribute("id", "numd" + index);
+i10.setAttribute("value", idnum.value);
+i10.setAttribute("class", "disnumd");
+i10.setAttribute("name", "numd");
+
+i11.setAttribute("id", "line" + index);
+i11.setAttribute("class", "disline");
+i11.setAttribute("name", "line");
+
+i12.setAttribute("id", "companyd" + index);
+i12.setAttribute("value", company.value);
+i12.setAttribute("class", "discompanyd");
+i12.setAttribute("name", "companyd");
+
+i13.setAttribute("id", "typed" + index);
+i13.setAttribute("value", type.value);
+i13.setAttribute("class", "distyped");
+i13.setAttribute("name", "typed");
+
+i14.setAttribute("id", "yeard" + index);
+i14.setAttribute("value", year.value);
+i14.setAttribute("class", "disyeard");
+i14.setAttribute("name", "yeard");
+
+i15.setAttribute("id", "monthd" + index);
+i15.setAttribute("value", month.value);
+i15.setAttribute("class", "dismonthd");
+i15.setAttribute("name", "monthd");
+
+i16.setAttribute("id", "cruserd" + index);
+i16.setAttribute("value", cruser.value);
+i16.setAttribute("class", "discruserd");
+i16.setAttribute("name", "cruserd");
+
+i17.setAttribute("id", "crdate" + index);
+i17.setAttribute("value", crdate.value);
+i17.setAttribute("class", "discrdated");
+i17.setAttribute("name", "crdated");
+
+i2.setAttribute("id", "subd" + index);
+i2.setAttribute("name", "subd");
+i2.setAttribute("class", "subd");
+
+i3.setAttribute("id", "deptd" + index);
+i3.setAttribute("name", "deptd");
+
+i4.setAttribute("id", "amt" + index);
+i4.setAttribute("name", "amt");
+i4.setAttribute("class", "amt");
+i4.setAttribute("onBlur", "curren()")
+y1.appendChild(i10);
+y1.appendChild(i11);
+y1.appendChild(i12);
+y1.appendChild(i13);
+y1.appendChild(i14);
+y1.appendChild(i15);
+y1.appendChild(i16);
+y1.appendChild(i17);
+y2.appendChild(i2);
+y3.appendChild(i3);
+y4.appendChild(i4);
+//opt(i2);     //科目下拉列之通过查询表实现
+suboptform(i2);   //科目下拉列之通过form实现
+deptoptform(i3);
+
+
+index++;
+//console.log(index);
+
+}
+</script>
+    <div class="container-fluid">
+        <div class="row">
+
+            <div class="col-md-12 col-xs-12">
+                <h2 align="center">预算单{{ num }}</h2>
+                <span id="p"style="color: red"></span>
+                <button id="btn" onclick="">ajax</button>
+                <button id="myBtn" onclick="save()">保存</button>
+
+                <p id="demo"></p>
+
+                <form name="input" action="/budget/post/" method="post">
+                    {% csrf_token %}
+                    <p><input class="btn btn-default" type="submit" value="提交"/></p>
+                    <table class="table table-bordered">
+
+                        <tr>
+                            <td class="td1">单据编号</td>
+                            <td>{{ budgetform.num }}</td>
+                            <td class="td1">日期</td>
+                            <td>{{ budgetform.crdate }}{{ budgetform.company }}</td>
+                        </tr>
+                        <tr>
+                            <td>年度</td>
+                            <td>{{ budgetform.year }}</td>
+                            <td>期间</td>
+                            <td>{{ budgetform.month }}</td>
+                        </tr>
+                        <tr>
+                            <td>预算类别</td>
+                            <td>{{ budgetform.type }}                           </td>
+                            <td>制单人</td>
+                            <td>{{ budgetform.cruser }}</td>
+                        </tr>
+                        <tr>
+                            <td colspan="6" height="10 px"></td>
+                        </tr>
+                    </table>
+                    <table class="table table-bordered" id="ta2">
+                        <tr>
+                            <td colspan=2 class="linetitle">
+                                <button type="button" class="glyphicon glyphicon-plus" onclick="jia()"></button>
+                                <button type="button" class=" glyphicon glyphicon-minus" onclick="del()"></button>
+                                科目
+                            </td>
+
+                            <td width="94" class="linetitle">归属部门</td>
+                            <td width="72" class="linetitle">金额</td>
+                        </tr>
+
+
+                    </table>
+                </form>
+<table class="table table-bordered">
+    <tr>
+
+        <td><select id="se">
+             {% for i in sub %}
+            <option value={{ i.num }}>{{ i.des }}</option>
+             {% endfor %}
+        </select>
+        </td>
+        <td>
+            {{ budgetd.subject }}
+        </td>
+        <td>
+            {{ budgetd.dept }}
+        </td>
+        <td>
+            {{ budgetd.amt }}
+        </td>
+    </tr>
+</table>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("id_num").onchange = function () {
+            value();
+        }
+
+
+        function value() {
+            var fn = document.getElementById("numd0");
+            var ss = document.getElementById("id_num");
+            var cc= document.getElementById("id0");
+            fn.value = ss.value;
+            cc.value="0";
+            console.log(cc);
+
+        }
+        function sel(){
+
+
+
+      }
+        function save() {
+            var idnum = document.getElementById("id_num");
+            var company = document.getElementById("id_company");
+            var type = document.getElementById("id_type");
+            var year = document.getElementById("id_year");
+            var month = document.getElementById("id_month");
+            var cruser = document.getElementById("id_cruser");
+            var crdate = document.getElementById("id_crdate");
+            var fn = document.getElementById("ta2").rows.length;
+            for (var i = 1; i < fn; i++) {
+                var fline =document.getElementsByClassName('disline')[i-1]
+                var fidnum = document.getElementsByClassName("disnumd")[i - 1];
+                var fcompany = document.getElementsByClassName("discompanyd")[i - 1];
+                var ftype = document.getElementsByClassName("distyped")[i - 1];
+                var fyear = document.getElementsByClassName("disyeard")[i - 1];
+                var fmonth = document.getElementsByClassName("dismonthd")[i - 1];
+                var fcruser = document.getElementsByClassName("discruserd")[i - 1];
+                var fcrdate = document.getElementsByClassName("discrdated")[i - 1];
+                fline.value=i
+                fidnum.value = idnum.value
+                fcompany.value = company.value
+                ftype.value = type.value
+                fyear.value = year.value
+                fmonth.value = month.value
+                fcruser.value = cruser.value
+                fcrdate.value = crdate.value
+                console.log(i)
+
+            }
+
+        }
+
+    </script>
+
+
+
+{% endblock %}

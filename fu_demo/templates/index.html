@@ -1,0 +1,44 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script  type="javascript" src="{% static 'js/jquery.min.js' %}"></script>
+    <script  type="javascript" src="{% static 'js/kindeditor-4.1.10/kindeditor-min.js' %}"></script>
+    <script  type="javascript" src="{% static 'js/kindeditor-4.1.10/lang/zh_CN.js' %}"></script>
+    <script  type="javascript" src="{% static 'js/kindeditor-4.1.10/config.js' %}"></script>
+    <script type="javascript">
+        KindEditor.ready(function(K) {
+                K.create('textarea[name=content]',{
+                    width:'800px',
+                    height:'200px',
+                    uploadJson: '/admin/upload/kindeditor',
+                });
+        });
+    </script>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>姓名</td>
+            <td><input type="text" value="{{ pro.name }}"/></td>
+        </tr>
+        <tr>
+            <td>详情</td>
+            <td><textarea name="content">
+                {{ pro.pubmark }}
+            </textarea></td>
+            <script type="javascript">
+                KindEditor.ready(function(K) {
+                        K.create('textarea[name=content]',{
+                            width:'800px',
+                            height:'200px',
+                            uploadJson: '/admin/upload/kindeditor',
+                        });
+                });
+    </script>
+        </tr>
+    </table>
+</body>
+</html>

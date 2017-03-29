@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title></title>
+    <script type="text/javascript" src="../static/js/jquery.min.js"></script>
+    <script type="text/javascript">
+        //console.log(document.getElementsByTagName('div'))
+        //alert(document.getElementsByTagName('div'))
+        //div = document.getElementById('div_id')
+        //document.getElementsByClassName('div_class')
+        //alert(div)
+        /*a = 5
+        switch (a){
+            case 1:
+                alert(1);
+                break;
+            case 2:
+                alert(2);
+                break;
+            default :
+                alert(3)
+        }*/
+        function update(x,y,z) {
+            /*inp = document.getElementById('inp')
+            inp2 = document.getElementById('inp2')
+            alert(inp.value + inp2.value)*/
+            alert(x +' '+ y +" "+ z)
+        }
+    </script>
+</head>
+<body>
+   <div id="div_id" class="div_class">
+       欢迎使用js!
+   </div>
+   <input type="text" id="inp">
+   +
+   <input type="text" id="inp2">
+   <input type="button" onclick="update(2,2,3)" value="提交"/>
+</body>
+</html>

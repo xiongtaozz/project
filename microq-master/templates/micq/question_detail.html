@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ question.title }}</title>
+</head>
+<body>
+    {% for tag in question.tags.all %}
+        <span>{{ tag }}</span>
+    {% endfor %}
+
+    <h2>{{ question.title }}</h2>
+    <p>{{ question.body }}</p>
+    <p>由{{ question.user.username }} 提问于 {{ question.created }}</p>
+
+    {% if question.user == request.user %}
+        <p>
+            <a href="{% url 'question_update' question.id %}">修改</a>
+            <a href="{% url 'question_delete' question.id %}">删除</a>
+        </p>
+    {% endif %}
+
+    
+    <p>添加评论</p>
+    
+    <form action="{% url 'question_comment_create' question.pk %}" method="POST">
+        {% csrf_token %}
+        {{ comment_form.as_p }}
+        <input type="submit" value="发布">
+
+    </form>
+    
+
+    <h4>问题评论：</h4>
+        {% for question_comment in question_comment_list %}
+            <p><font size="2">
+                {{ question_comment.body }}
+                <a href="'question/{{question.pk}}/comment/{{question_comment.id}}/delete" style="text-decoration:none;">×</a>
+            </font></p>
+        {% endfor %}
+
+
+    <h3>所有答案：</h3>
+    {% for answer in answer_list %}
+        <p><a href="{% url 'answer_detail' question.pk answer.id %}">{{ answer }}</a></p>
+        <p>由 {{ answer.user.username }} 回答于 {{ question.created }}</p>
+        <p>答案评论：</p>
+        {% for answer_comment in answer_comment_list %}
+            <p><font size="2">{{ answer_comment }}</font></p>
+        {% endfor %}
+    {% endfor %}
+
+    <h3>添加回答：</h3>
+    <form action="{% url 'create_answer' question.id %}" method="post">
+        {% csrf_token %}
+        {{ answer_form.as_p }}
+        <input type="submit" value="发布">
+    </form>
+</body>
+</html>

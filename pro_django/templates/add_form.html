@@ -1,0 +1,30 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>产品添加</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+</head>
+<body>
+
+
+  <form class="form-horizontal" action="{% url 'add_form' %}" method="post">
+      {% csrf_token %}
+      <fieldset>
+          <div id="legend" class="">
+            <legend class="">添加产品</legend>
+          </div>
+      </fieldset>
+
+      {{ form.as_table }}
+      <div class="controls">
+        <button class="btn btn-primary">添加</button>
+      </div>
+  </form>
+
+
+</body>
+</html>

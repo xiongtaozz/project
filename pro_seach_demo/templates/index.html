@@ -1,0 +1,70 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" language="JavaScript" src="{% static 'jq/jquery.min.js' %}"></script>
+    <script type="text/javascript">
+        $(function(){
+             $('#btn1').on('click', function () {
+
+                 $('#clit1').show()
+                 $('#clit2').hide()
+             })
+            $('#btn2').on('click', function () {
+                 $('#clit1').hide()
+                 $('#clit2').show()
+             })
+        })
+    </script>
+    <style>
+        #header{
+            border: solid 1px red;
+            width: 300px;
+            height: 200px;
+
+        }
+        #clit1{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <input type="button" id="btn1" value="单笔录入入口"/><input type="button" id="btn2" value="批量录入入口"/>
+    </div>
+    <div id="pro">
+        {% for f in fi %}
+        <div>
+            文档实例下载:<a href="/download/uploads/xls/abc.csv">下载</a>
+        </div>
+        {% endfor %}
+    </div>
+    <div id="header">
+        <div id="clit1">
+            <form method="post" action="">
+                <table>
+                    <tr>
+                        <td>姓名:</td>
+                        <td><input type="text" name="userName"/></td>
+                    </tr>
+                    <tr>
+                        <td>成绩:</td>
+                        <td><input type="text" name="qty"/></td>
+                    </tr>
+                    <tr style="float: right">
+                        <td colspan="2"><input type="submit" value="提交"/></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+        <div id="clit2">
+            <form method="post" enctype="multipart/form-data"  action="/excel/">
+            教务处成绩录入:<input type="file" name="filename" id="filename" /> <Br/>
+            <input type="submit" value="确认录入" />
+            </form>
+        </div>
+    </div>
+</body>
+</html>

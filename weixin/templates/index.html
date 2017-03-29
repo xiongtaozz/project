@@ -1,0 +1,33 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+     <script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
+     <script type="text/javascript">
+         $(function(){
+             $('#ceshi').click(function(){
+                 $.ajax({
+                     url:'http://lovemongolia.sinaapp.com',
+                     success:function(data){
+                         if (data){
+                             alert(data)
+                         }else{
+                             alert('None')
+                         }
+                     },
+                     error:function(){
+                         alert('相应错误')
+                     }
+
+                 })
+             })
+         })
+     </script>
+    <title></title>
+</head>
+<body>
+    <h1>测试微信借口</h1><input type="submit" id="ceshi"/>
+
+</body>
+</html>

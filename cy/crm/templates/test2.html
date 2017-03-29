@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% load i18n %}/span>
+
+{% block title %}My budget{% endblock %}
+
+{% block content %}
+     {% load staticfiles %}
+        <script src=" {% static 'js/formatCurrency-1.4.0.js' %}" type="text/javascript" ></script>
+
+
+len:{{ len }}
+    <hr>
+    <select>
+        {% for i in sub %}
+            <option value={{ i.num }}>{{ i.des }}</option>
+        {% endfor %}
+    </select>
+    <hr>
+<select id="#subd0">
+
+    </select>
+{% for i in sub %}
+    <h1>{{ i.year }}--year</h1>
+    {% endfor %}
+    <script>
+
+         $("#subd0").click(function(){
+                     $("#subd0").prepend("<option value='0'>0</option>")
+
+         })
+
+    </script>
+<p><input type="text" class="amt" onBlur="curren()"></p><input type="button" onclick="aa()">
+ <script>
+
+ function curren(){
+   $('.amt').formatCurrency();
+ }
+
+    </script>
+
+
+{% endblock %}

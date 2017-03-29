@@ -1,0 +1,17 @@
+DEBUG:root:函数名：func1, 参数：无，调用时间：2016-11-09 21:40:48
+DEBUG:root:函数名：func2, 参数：无，调用时间：2016-11-09 21:40:48
+DEBUG:root:函数名：func1, 参数：无，调用时间：2016-11-09 21:42:17
+DEBUG:root:函数名：func2, 参数：无，调用时间：2016-11-09 21:42:17
+DEBUG:root:函数名：func1, 参数：无，调用时间：2016-11-09 21:44:40
+DEBUG:root:函数名：func2, 参数：无，调用时间：2016-11-09 21:44:40
+DEBUG:root:函数名：func1, 参数：无，调用时间：2016-11-09 21:45:42
+DEBUG:root:函数名：func2, 参数：无，调用时间：2016-11-09 21:45:42
+DEBUG:root:函数名：func1, 参数：无，调用时间：2016-11-09 21:45:42
+DEBUG:root:函数名：func2, 参数：无，调用时间：2016-11-09 21:45:42
+DEBUG:root:函数名：func1, 参数：ArgSpec(args=[], varargs=None, keywords=None, defaults=None)，调用时间：2016-11-09 21:48:36
+DEBUG:root:函数名：func2, 参数：ArgSpec(args=[], varargs=None, keywords=None, defaults=None)，调用时间：2016-11-09 21:48:36
+DEBUG:root:函数名：func3, 参数：ArgSpec(args=['arg'], varargs=None, keywords=None, defaults=None)，调用时间：2016-11-09 21:51:08
+DEBUG:root:函数名：func4, 参数：ArgSpec(args=['arg1', 'arg2'], varargs=None, keywords=None, defaults=(None,))，调用时间：2016-11-09 21:52:09
+DEBUG:root:函数名：func5, 参数：ArgSpec(args=[], varargs='args', keywords='kwargs', defaults=None)，调用时间：2016-11-09 21:53:05
+DEBUG:root:函数名：func1, 参数：ArgSpec(args=[], varargs=None, keywords=None, defaults=None)
+DEBUG:root:函数名：func2, 参数：ArgSpec(args=[], varargs=None, keywords=None, defaults=None)，调用时间：2016-11-09 21:56:11

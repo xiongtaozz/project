@@ -1,0 +1,48 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link type="text/css" rel="stylesheet" href="{% static 'css/index.css' %}" />
+    <style type="text/css">
+        .out_div{width: 760px;height:350px;overflow-x: auto;overflow-y: hidden;}
+        .in_div{width: 200px;height: 100px;float: left; margin: 15px;}
+    </style>
+</head>
+<body>
+   <p>  欢迎你: {{ user }},<a>退出</a>|<a href="/cart/findcart/">
+       <img src="{% static 'img/cart.jpg' %}" style="width: 25px;height: 15px"/>购物车</a>
+   </p>
+    {% block index %}
+
+    {% endblock %}
+
+
+    {% block cart %}
+
+    {% endblock %}
+</body>
+<script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type="text/javascript">
+         function addcart(id){
+            book_name=id
+            $.ajax({
+                url:'/cart/addcart/',
+                dataType :'json',
+                type:'POST',
+                data:{
+                    bookname:book_name
+                },
+                success:bug
+           })
+           function bug(data){
+             if (data){
+                 alert('加入购物车成功!')
+             }else{
+                 alert('加入失败,或已经加入!')
+             }
+         }
+         }
+    </script>
+</html>

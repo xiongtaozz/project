@@ -1,0 +1,25 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        .out_div{width: 760px;height:350px;overflow-x: auto;overflow-y: hidden;}
+        .in_div{width: 200px;height: 100px;float: left; margin: 15px;}
+    </style>
+</head>
+<body>
+ <div style="border: 1px ;margin:0 auto" class="out_div">
+     {% for book in books %}
+       <div class="in_div">
+           <div><img src="/static/{{ book.book_img }}" width="120" height="100"><br/>
+           <span>书名:{{ book.name }}</span><br/>
+           <span>作者:{{ book.author }}</span><br/>
+           </div>
+       </div>
+     {% endfor %}
+ </div>
+
+</body>
+</html>

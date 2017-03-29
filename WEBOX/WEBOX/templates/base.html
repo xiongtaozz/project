@@ -1,0 +1,57 @@
+{#{% extends 'base.html' %}#}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <style type="text/css">
+        *{margin: 0px;padding: 0px;}
+        table, td{
+	        font:100% Arial, Helvetica, sans-serif;
+            }
+        table{width:1000px;border-collapse:collapse;margin-top:20px;margin-right:102px;float:right;}
+        th, td{text-align:left;padding:.5em;border:1px solid #fff;text-align: center}
+        th{background:#328aa4;color:#fff;}
+        td{background:#e5f1f4;}
+        /* tablecloth styles */
+        tr.even td{background:#e5f1f4;}
+        tr.odd td{background:#f8fbfc;}
+        .th_color td{background:#D8E7F4}
+        /* use this if you want to apply different styleing to empty table cells*/
+        td.empty, tr.odd td.empty, tr.even td.empty{background:#fff;}
+        span{
+            font-family:微软雅黑;
+            color:#CAD5E7;
+            text-align:left;
+            line-height: 30px;
+            text-decoration: none;
+        }
+        span:hover{
+            background:#6B6372 ;
+        }
+        #container{
+            width: 1000px;
+            height: 400px;
+            margin: 0 auto;
+            margin-top: 20px;
+            margin-right: 102px;
+            float: right;
+        }
+        #right-bot{
+            width: 800px;
+        }
+    </style>
+</head>
+<body>
+    <div style="float: right; width: 800px;"  id="right" >
+            <script src="https://code.highcharts.com/highcharts.js"></script>
+            <script src="https://code.highcharts.com/modules/exporting.js"></script>
+            {% block container %}<div id="container"></div>{% endblock %}
+
+            <div id="right-bot">
+                {% block table %}table{% endblock %}
+            </div>
+</body>
+  {% block container_js %}{% endblock %}
+</html>

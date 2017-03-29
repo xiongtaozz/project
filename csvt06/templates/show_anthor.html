@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>show_anthor.html</title>
+	
+    <meta name="keywords" content="keyword1,keyword2,keyword3">
+    <meta name="description" content="this is my page">
+    <meta name="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+
+  </head>
+  <body>
+     {% for author in authors%}
+      <div>
+      <h3>{{author.name}}</h3>
+		{% for book in author.book_set.all %} <!-- 遍历author对象里面的作者,通过作者找出书  -->
+		 <li>{{ book }}</li>
+		{% endfor %}
+      </div>
+     {% endfor %}
+  </body>
+</html>

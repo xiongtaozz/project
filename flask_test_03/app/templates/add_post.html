@@ -1,0 +1,16 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+{% from "_formhelpers.html" import render_field %}
+
+
+{% block content %}
+<form action="" method="post">
+    {{ form.csrf_token }}
+    <table>
+        {{ render_field(form.title) }}
+        {{ render_field(form.content) }}
+    </table>
+        <p><input type="submit" value="submit"></p>
+</form>
+
+{% endblock %}

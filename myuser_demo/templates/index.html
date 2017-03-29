@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+首页,欢迎{{ request.user.email }}进入。<a href="{% url 'logout' %}">注销</a>
+{% if perms.myuser.note_article %}
+    有文章查看的权限。
+    {% else %}
+    没有增加文章的权限。
+{% endif %}
+</body>
+</html>

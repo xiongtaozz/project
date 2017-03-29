@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>js中的Ajax经典示例</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script type="text/javascript"> 
+    //传统javascript实现AJAX写法
+    function LoadXMLDoc1() 
+    { 
+      var xmlhttp; 
+      if(window.XMLHttpRequest) 
+      { 
+        // 兼容IE7+, Firefox, Chrome, Opera, Safari
+        xmlhttp=new XMLHttpRequest(); 
+      } 
+      else 
+      { 
+        // 兼容IE6, IE5
+        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP"); 
+      } 
+      //onreadystatechange 存储函数（或函数名），每当 readyState 属性改变时，就会调用该函数。 
+      xmlhttp.onreadystatechange=function() 
+      { 
+        //readyState 
+        //存有 XMLHttpRequest 的状态。从 0 到 4 发生变化。 
+        //0: 请求未初始化 
+        //1: 服务器连接已建立 
+        //2: 请求已接收 
+        //3: 请求处理中 
+        //4: 请求已完成，且响应已就绪 
+        //status 
+        //200: "OK" 
+        //404: 未找到页面
+        if (xmlhttp.readyState==4 && xmlhttp.status==200) 
+        {
+            //接收到的json字符串转为json对象
+            result = eval('('+xmlhttp.responseText+')');
+            document.getElementById("myDiv1").innerHTML=result.data;
+        } 
+      } 
+      xmlhttp.open("GET","/do-js-ajax",true);
+      xmlhttp.send(); 
+    } 
+</script>
+</head>
+<body>
+<!-- 获取服务器上的文本文件并显示 -->
+<div id="myDiv1"><h2>通过ajax改变内容</h2></div> 
+<button id="btnChange1" type="button" onclick="LoadXMLDoc1()">通过AJAX改变内容</button> 
+</body>
+</html>

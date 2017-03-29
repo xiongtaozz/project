@@ -1,0 +1,211 @@
+{% load staticfiles %}
+{#{% load myfilter %}#}
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>{{ user }}的个人博客</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href='{% static 'css/base.css' %}' rel="stylesheet">
+<link href='{% static 'css/index.css' %}' rel="stylesheet">
+<script type="text/javascript" src='{% static 'js/jquery.min.js' %}'></script>
+<script type="text/javascript" src='{% static 'js/sliders.js' %}'></script>
+<!--[if lt IE 9]>
+<script src="{% static 'js/modernizr.js' %}"></script>
+<![endif]-->
+</head>
+<body>
+<header>
+  <div class="logo">
+      <h1>{{ user }}的个人博客</h1>
+      <p>梦虽虚幻,却是自己的梦想；位虽低微,却是自己的岗位；屋虽简陋,却是自己的家；志虽渺小,却是自己的追求。</p>
+  </div>
+  <nav id="topnav" class="f_r">
+    <ul>
+      <a href="index.html" target="_blank">首页</a> <a href="news.html" target="_blank">关于我</a> <a href="p.html" target="_blank">文章</a> <a href="a.html" target="_blank">心情</a> <a href="c.html" target="_blank">相册</a> <a href="b.html" target="_blank">留言</a>
+    </ul>
+    <script src="/static/js/nav.js"></script>
+  </nav>
+</header>
+<article>
+  <div class="l_box f_l">
+    <div class="banner">
+      <div id="slide-holder">
+        <div id="slide-runner"> <a href="/" target="_blank"><img id="/static/slide-img-1" src='/static/images/a1.jpg' alt="" /></a> <a href="/" target="_blank"><img id="slide-img-2" src='/static/images/a2.jpg'  alt="" /></a> <a href="/" target="_blank"><img id="slide-img-3" src='/static/images/a3.jpg' alt="" /></a> <a href="/" target="_blank"><img id="slide-img-4" src='/static/images/a4.jpg' alt="" /></a>
+          <div id="slide-controls">
+            <p id="slide-client" class="text"><strong></strong><span></span></p>
+            <p id="slide-desc" class="text"></p>
+            <p id="slide-nav"></p>
+          </div>
+        </div>
+      </div>
+      <script>
+    if(!window.slider) {
+    var slider={};
+  }
+
+  slider.data= [
+    {
+        "id":"slide-img-1", // 与slide-runner中的img标签id对应
+        "client":"标题1",
+        "desc":"这里修改描述 这里修改描述 这里修改描述" //这里修改描述
+    },
+    {
+        "id":"slide-img-2",
+        "client":"标题2",
+        "desc":"add your description here"
+    },
+    {
+        "id":"slide-img-3",
+        "client":"标题3",
+        "desc":"add your description here"
+    },
+    {
+        "id":"slide-img-4",
+        "client":"标题4",
+        "desc":"add your description here"
+    }
+  ];
+
+    </script>
+    </div>
+    <!-- banner代码 结束 -->
+    <div class="topnews">
+      <h2>最新文章</h2>
+        {% for a in articles %}
+          <div class="blogs">
+            <ul>
+              <h3><a href="/find-blog/{{ a.pk }}">{{ a.title }}</a></h3>
+              <p>{{ a.content | slice:'200' }}...</p>
+              <p class="autor"><span class="lm f_l"><a href="/">{{ a.category }}></a></span><span class="dtime f_l">
+                  {{ a.date_publish | date_time }}
+              </span><span class="viewnum f_r">浏览（<a href="/">{{ a.click_count }}</a>）</span><span class="pingl f_r">评论（<a href="/">{{ a.comment_set.all|length }}</a>）</span></p>
+            </ul>
+          </div>
+        {% endfor %}
+    </div>
+  <div id="pagination">
+    <ul id="pagination-flickr">
+        {% if articles.has_previous %}
+            <li class="previous-off">&laquo;<a href="?page={{ articles.previous_page_number  }}">上一页</a></li>
+        {% endif %}
+        <li class="active">{{ articles.number }}/{{ articles.num_pages }}</li>
+        {% if articles.has_next %}
+        <li class="next"><a href="?page={{ articles.next_page_number }}">下一页 &raquo;</a></li>
+        {% endif %}
+   </ul>
+   </div>
+  </div>
+  <div class="r_box f_r">
+    <div class="tit01">
+      <h3>关注我</h3>
+      <div class="gzwm">
+        <ul>
+          <li><a class="xlwb" href="#" target="_blank">新浪微博</a></li>
+          <li><a class="txwb" href="#" target="_blank">腾讯微博</a></li>
+          <li><a class="rss" href="portal.php?mod=rss" target="_blank">RSS</a></li>
+          <li><a class="wx" href="mailto:admin@admin.com">邮箱</a></li>
+        </ul>
+      </div>
+    </div>
+    <!--tit01 end-->
+    <div class="moreSelect" id="lp_right_select">
+      <script>
+window.onload = function ()
+{
+  var oLi = document.getElementById("tab").getElementsByTagName("li");
+  var oUl = document.getElementById("ms-main").getElementsByTagName("div");
+
+  for(var i = 0; i < oLi.length; i++)
+  {
+    oLi[i].index = i;
+    oLi[i].onmouseover = function ()
+    {
+      for(var n = 0; n < oLi.length; n++) oLi[n].className="";
+      this.className = "cur";
+      for(var n = 0; n < oUl.length; n++) oUl[n].style.display = "none";
+      oUl[this.index].style.display = "block"
+    }
+  }
+}
+</script>
+      <div class="ms-top">
+        <ul class="hd" id="tab">
+          <li class="cur"><a href="/">浏览排行</a></li>
+          <li><a href="/">评论排行</a></li>
+          <li><a href="/">站长推荐</a></li>
+        </ul>
+      </div>
+      <div class="ms-main" id="ms-main">
+        <div style="display: block;" class="bd bd-news" >
+          <ul>
+              {% for ac in article_clicks %}
+                <li><a href="/blog/{{ ac.id }}/" target="_blank">{{ ac.title }}</a></li>
+              {% endfor %}
+          </ul>
+        </div>
+        <div  class="bd bd-news">
+          <ul>
+              {% for ax in artks %}
+                <li><a href="/blog/{{ ax.id }}/" target="_blank">{{ ax.title }}</a></li>
+              {% endfor %}
+          </ul>
+        </div>
+        <div class="bd bd-news">
+          <ul>
+              {% for ar in article_recommends %}
+                <li><a href="/blog/{{ ar.id }}/" target="_blank">{{ ar.title }}</a></li>
+              {% endfor %}
+          </ul>
+        </div>
+      </div>
+      <!--ms-main end -->
+    </div>
+    <!--切换卡 moreSelect end -->
+
+    <div class="cloud">
+      <h3>标签云</h3>
+      <ul>
+          {% for tag in tags %}
+            <li><a href="javascrapt:void(0)">{{ tag.name }}</a></li>
+          {% endfor %}
+      </ul>
+    </div>
+    <div class="tuwen">
+      <h3>文章归档</h3>
+      <ul>
+        <li>
+          <p><span class="tutime font-size-18"><a href=''>2015年2月文章归档</a></span></p>
+        </li>
+        <li>
+          <p><span class="tutime font-size-18"><a href=''>2015年3月文章归档</a></span></p>
+        </li>
+        <li>
+          <p><span class="tutime font-size-18"><a href=''>2015年4月文章归档</a></span></p>
+        </li>
+        <li>
+          <p><span class="tutime font-size-18"><a href=''>2015年5月文章归档</a></span></p>
+        </li>
+        <li>
+          <p><span class="tutime font-size-18"><a href=''>2015年6月文章归档</a></span></p>
+        </li>
+      </ul>
+    </div>
+    <div class="links">
+      <h3>友情链接</h3>
+      <ul>
+          {% for link in links %}
+            <li><a href="{{ link.callback_url }}">{{ link.title }}</a></li>
+          {% endfor %}
+      </ul>
+    </div>
+  </div>
+  <!--r_box end -->
+</article>
+<footer>
+  <p class="ft-copyright">{{ user }}的个人博客 蜀ICP备xxxxxxx号-1</p>
+  <div id="tbox"> <a id="togbook" href="/"></a> <a id="gotop" href="javascript:void(0)"></a> </div>
+</footer>
+</body>
+</html>

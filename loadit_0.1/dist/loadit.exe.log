@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "loadit.py", line 103, in <module>
+  File "loadit.py", line 44, in exec_tasks
+  File "loader.pyc", line 131, in query_by_form
+AssertionError: query_by_form failed for a problematic course 数理逻辑
+Traceback (most recent call last):
+  File "loadit.pyw", line 103, in <module>
+  File "loadit.pyw", line 44, in exec_tasks
+  File "loader.pyc", line 131, in query_by_form
+AssertionError: query_by_form failed for a problematic course 数理逻辑

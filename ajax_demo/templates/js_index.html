@@ -1,0 +1,84 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {#    外部引入#}
+
+    <title></title>
+    <script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
+{#    <script type="text/javascript" src="/static/js/jquery.min.js"></script>#}
+    <script type="text/javascript" src="{% static 'js/csrf_stoken_py.js' %}"></script>
+    <script>
+{#        方法1#}
+{#        function but_fun(){#}
+{#            alert('the js')#}
+{#        }#}
+{#        方法二#}
+{#        $(function(){#}
+{#            $('#but').click(function(){#}
+{#                alert('the jq')#}
+{#            })#}
+{#        })#}
+{#       方法三#}
+        $(function(){
+            $('#but').on('click',function(){
+                alert($('#username').val())
+{#                $.ajax({#}
+{#                    $(function(){})#}
+{#                })#}
+{#                $.post(url='',data={},function(data){#}
+{##}
+{#                })#}
+                $.ajax({
+{#                    对应请求操作#}
+                    url:'/login/',
+                    type:'post',
+                    data:{'username':$('#username').val(),'password':$('#password').val()},
+                    dataType:'json',
+{#                    beforeSend:function(xhr, settings) {#}
+{#                        if (!csrfSafeMethod(settings.type) && !this.crossDomain) {#}
+{#                            xhr.setRequestHeader("X-CSRFToken", csrftoken)}#}
+{#                    },#}
+                    success: function(date){
+                        alert(date.success)
+                    },
+                    error:function(){
+                        alert('错误')
+                    },
+                })
+            })
+        })
+
+{#        function csrfSafeMethod(method) {#}
+{#            // these HTTP methods do not require CSRF protection#}
+{#            return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));#}
+{#        }#}
+{#        // using jQuery#}
+{#        function getCookie(name) {#}
+{#            var cookieValue = null;#}
+{#            if (document.cookie && document.cookie != '') {#}
+{#                var cookies = document.cookie.split(';');#}
+{#                for (var i = 0; i < cookies.length; i++) {#}
+{#                    var cookie = jQuery.trim(cookies[i]);#}
+{#                    // Does this cookie string begin with the name we want?#}
+{#                    if (cookie.substring(0, name.length + 1) == (name + '=')) {#}
+{#                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));#}
+{#                        break;#}
+{#                }#}
+{#            }#}
+{#            }#}
+{#        return cookieValue;#}
+{#    }#}
+{#    var csrftoken = getCookie('csrftoken');#}
+
+    </script>
+</head>
+<body>
+     <h1>测试ajax</h1>
+      <input type="text" id="username"/>
+      <input type="password" id="password"/>
+      <input type="button" id="but"  value="测试"/>
+      <span id="ajax_t"></span>
+</body>
+</html>

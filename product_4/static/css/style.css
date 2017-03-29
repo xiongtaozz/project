@@ -1,0 +1,67 @@
+        * {
+            margin: 0;
+            padding: 0
+        }
+
+        body {
+            font-family: "Î¢ÈíÑÅºÚ", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+        .main {
+            width: 100%;
+            min-width: 1140px;
+            height: 780px;
+            background: url('http://www.wo81.com/skin/2014/images/test_bg.jpg');
+            filter:"progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod='scale')";
+            -moz-background-size:100% 100%;
+            background-size:100% 100%;
+        }
+        .header {
+            width: 1140px;
+            margin: 0 auto;
+            height: 100px;
+            text-align: right;
+        }
+        .center{
+            width: 1140px;
+            margin: 0 auto;
+            height: 500px;
+            text-align: right;
+            position: relative;
+        }
+
+        .header a {
+            display: block;
+            font-size: 24px;
+            padding-top: 50px;
+        }
+        .list{
+            width: 600px;
+            height: 500px;
+            position: absolute;
+            right:0;
+            text-align: left;
+        }
+        .list li{
+            list-style-type: decimal;
+        }
+        .list a:hover{
+            color:#f60;
+        }
+        .list .author{
+            text-align: right;
+        }
+        .article{
+            list-style: none;
+            position: relative;
+        }
+        .article .author{
+            position: absolute;
+            right:0;
+            color:#888;
+            font-size:14px;
+        }

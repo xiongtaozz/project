@@ -1,0 +1,14 @@
+#id_div{
+            margin: 5px;
+            padding: 5px;
+            border: solid 3px yellow;
+        }
+.t_div_cls{
+    border: solid 3px red;
+}
+
+div{
+    margin: 5px;
+    padding: 10px;
+    border: solid 3px blue;
+    }

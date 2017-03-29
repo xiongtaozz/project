@@ -1,0 +1,51 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<link type="text/css" rel="stylesheet" href="{% static 'css/styles.css' %}">
+<title>ToDoList</title>
+<link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+<script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+<!-- Custom CSS -->
+<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+<link href="{% static 'css/jquerysctipttop.css' %}" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="container" id="main">
+<h1>ToDoList</h1>
+<form role="form"  action="{% url 'add' %}" id="main_input_box">
+<label>
+<input type="text" class="form-control"    id="custom_textbox" name="item" placeholder="还有什么事情需要做?">
+<input type="submit" value="Add" class="btn btn-primary add_button">
+</label>
+</form>
+<ol class="list-group list_of_items">
+    {% for item in item_list %}
+<li id="Item.id" class="list-group-item {% if item.flag %}completed_item{% endif %}">
+	<div class="text_holder">
+        {{ item.content }} - {{ item.pubdate|date:"Y-m-d" }}
+		<div class="btn-group pull-right">
+			<button class="delete btn btn-warning">Delete</button>
+			<button class="edit btn btn-success">Edit</button>
+		</div>
+	</div>
+	<div class="checkbox">
+		<label><input type="checkbox" class="pull-right"></label>
+	</div>
+</li>
+{% endfor %}
+</ol>
+   <div style="float: right;">
+        {% if item_list.has_previous %}
+        <a href="?page={{item_list.previous_page_number}}">上一页</a> &nbsp;
+         {% endif %}
+        第{{item_list.number }}页/总共{{ item_list.Paginator.num_pages}}页 &nbsp;
+         {% if item_list.has_next %}
+        <a href="?page={{item_list.next_page_number }}">下一页</a>&nbsp;
+        {% endif %}
+      </div>
+    </div>
+  </body>
+</html>

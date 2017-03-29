@@ -1,0 +1,12 @@
+{% if form.errors %}
+<p>密码与账号不符。再试一次。</p>
+{% endif %}
+
+<h1>登陆</h1>
+<form method="post" enctype="multipart/form-data">
+	{% csrf_token %}
+	<p><label for="id_email">Email Address:</label> <input id="id_email" name="email" type="email" /></p>
+	<p><label for="id_password">Password:</label> <input id="id_password" name="password" type="password" /></p>
+	<input type="submit" value="登陆" />
+</form>
+                            

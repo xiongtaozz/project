@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>jQuery UI Draggable - Default functionality</title>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <style>
+      body,html{
+          padding: auto 0;
+          margin:  auto 0;
+      }
+      #draggable {
+          width: 150px;
+          height: 150px;
+          border: solid 1px red;
+          padding: 0.5em;
+      }
+      #dra{
+          width: 500px;
+          height: 500px;
+          border: solid 1px blue;
+          padding: 0.5cm;
+      }
+      div{
+          position: relative;
+      }
+  </style>
+  <script>
+      $(function() {
+        $( "#draggable" ).draggable();
+      });
+  </script>
+</head>
+<body>
+<div id="dra">
+    <div id="draggable" class="ui-widget-content">
+        <input type="button" value="提交"/>
+        <p>Drag me around</p>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,16 @@
+{% extends 'depot/base.html' %}
+
+{% block findbooks %}
+    <table>
+        <tr>
+            <td><lable for='id_title'>标题</lable></td>
+        </tr>
+    {% for book in books %}
+        <tr>
+            <td><lable for='id_title'>
+                <a href="/text/{{ book.id }}/update/">{{ book.title }}</a>
+            </lable></td>
+        </tr>
+    {% endfor %}
+    </table>
+{% endblock %}

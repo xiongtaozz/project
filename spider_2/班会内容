@@ -1,0 +1,16 @@
+班会主题: 爬虫作业评讲以及知识补充
+主要内容:
+1,爬麦子官网所有教师信息  --->demo2
+2,cookie                --->demo1
+3,动态代理               ---> demo1
+
+爬不到网站: flex---> 2008 -- 2013
+类的方式处理爬虫和多线程方式(下次课程,预习) --->效率
+oop ---> fpt
+
+爬虫相关模块库: pyquery(非常暴力) , bs4(进阶) ,lxml(进阶),selenium(测试)等
+
+相关资料:
+https://docs.python.org/2/library/threading.html?highlight=threading#module-threading
+http://www.jb51.net/article/57672.htm
+http://cuiqingcai.com/968.html

@@ -1,0 +1,65 @@
+1、当周学习情况交流
+2、技术点讲解（Python标准库：re和正则表达式）
+3、自由交流和答疑
+
+编译正则表达式：
+re.compile(pattern, flags=0):编译正则表达式，返回RegexObject对象
+
+查找和匹配：
+re.match(pattern, string, flags=0)：从字符串的开头是否能匹配正则表达式。匹配则返回MatchObject，如果不能匹配返回None。
+re.search(pattern, string, flags=0):在字符串中任意位置查找，是否能匹配正则表达式。匹配则返回MatchObject，如果不能匹配返回None。
+re.findall(pattern, string, flags=0)：找到匹配的所有子串，并把它们作为一个列表返回。这个匹配是从左到右有序地返回。如果无匹配，返回空列表。
+matchobject.group() 用来提出分组截获的字符串
+
+字符串分离：
+re.split(pattern, string, maxsplit=0)：通过正则表达式将字符串分离。
+
+检索和替换：
+re.sub()   将字符串中所有匹配正则表达式模式的部分进行替换，返回替换后的字符串
+re.subn()  将字符串中所有匹配正则表达式模式的部分进行替换，返回替换后的字符串和替换的次数
+
+其他：
+re.finditer(pattern, string, flags=0)：找到 RE 匹配的所有子串，并把它们作为一个迭代器返回。
+re.escape(string)：对字符串中的非字母数字进行转义
+re.purge()：清空缓存中的正则表达式
+
+修饰符:
+re.I 使匹配对大小写不敏感
+re.L 做本地化识别（locale-aware）匹配
+re.M 多行匹配，影响 ^ 和 $
+re.S 使 . 匹配包括换行在内的所有字符
+re.U 根据Unicode字符集解析字符。这个标志影响 \w, \W, \b, \B.
+re.X 该标志通过给予你更灵活的格式以便你将正则表达式写得更易于理解。 
+
+
+资料：
+http://deerchao.net/tutorials/regex/regex.htm
+https://docs.python.org/2/library/re.html?highlight=re#module-re
+
+
+
+This module exports the following functions:
+    match    Match a regular expression pattern to the beginning of a string.
+    search   Search a string for the presence of a pattern.
+    sub      Substitute occurrences of a pattern found in a string.
+    subn     Same as sub, but also return the number of substitutions made.
+    split    Split a string by the occurrences of a pattern.
+    findall  Find all occurrences of a pattern in a string.
+    finditer Return an iterator yielding a match object for each match.
+    compile  Compile a pattern into a RegexObject.
+    purge    Clear the regular expression cache.
+    escape   Backslash all non-alphanumerics in a string.
+
+Some of the functions in this module takes flags as optional parameters:
+    I  IGNORECASE  Perform case-insensitive matching.
+    L  LOCALE      Make \w, \W, \b, \B, dependent on the current locale.
+    M  MULTILINE   "^" matches the beginning of lines (after a newline)
+                   as well as the string.
+                   "$" matches the end of lines (before a newline) as well
+                   as the end of the string.
+    S  DOTALL      "." matches any character at all, including the newline.
+    X  VERBOSE     Ignore whitespace and comments for nicer looking RE's.
+    U  UNICODE     Make \w, \W, \b, \B, dependent on the Unicode locale.
+
+非贪婪模式：尽可能少的去匹配字符
+贪婪模式：尽可能多的去匹配字符

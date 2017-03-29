@@ -1,0 +1,12 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+    <form class="pure-form" method="post" action="/login">
+        <fieldset>
+            <p>{{form.username.label}}{{form.username}}</p>
+            <p>{{form.password.label}}{{form.password}}</p>
+            {{form.submit}}
+        </fieldset>
+    </form>
+{% endblock %}

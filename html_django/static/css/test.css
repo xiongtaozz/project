@@ -1,0 +1,81 @@
+/*基本布局*/
+        body,html{
+            padding: 0;
+            margin: 0;
+
+        }
+        #header,#main{
+            margin: 0 auto;
+            width: 750px;
+
+        }
+/*{#        td布局#}*/
+        .content{
+            padding: 10px;
+
+        }
+/*{#        input样式布局#}*/
+        .inputs{
+            border: solid 1px #a4c8e0;
+            width: 150px;
+            height: 15px;
+        }
+/*{#       不允许元素浮动#}*/
+        dl{
+            clear: both;
+        }
+/*{#        设置浮动#}*/
+        dt,dd{
+            float: left;
+        }
+/*{#        设置dt内容#}*/
+        dt{
+            width: 130px;
+            text-align: right;
+            font-size: 14px;
+            height: 30px;
+            line-height: 25px;
+        }
+/*{#        设置dd内容#}*/
+        dd{
+            font-size: 12px;
+            color: #666666;
+            width: 180px;
+        }
+/*{#        创建 图标#}*/
+        .bg{
+            background-image: url(../images/register_bg.gif);
+            background-repeat: no-repeat;
+            width: 6px;
+            height: 6px;
+        }
+/*{#        设置图标位置,以及坐标选择#}*/
+        .bg_top_left{
+            background-position: 0px 0px;
+        }
+        .bg_top_right{
+            background-position: 0px -6px;
+        }
+        .bg_end_left{
+            background-position: 0px -12px;
+        }
+        .bg_end_right{
+            background-position: 0px -18px;
+        }
+/*{#        设计横线#}*/
+        .bg_top{
+            border-top: solid 1px #666666;
+        }
+        .bg_left{
+            border-left: solid 1px #666666;
+        }
+        .bg_right{
+            border-right: solid 1px #666666;
+        }
+        .bg_end{
+            border-bottom: solid 1px #666666;
+        }
+/*{#        设置某一个方框样式#}*/
+        .userName{
+            width: 110px;
+        }

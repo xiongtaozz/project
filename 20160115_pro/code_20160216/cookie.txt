@@ -1,0 +1,10 @@
+# Netscape HTTP Cookie File
+# http://curl.haxx.se/rfc/cookie_spec.html
+# This is a generated file!  Do not edit.
+
+.imooc.com	TRUE	/	FALSE		apsid	IzMjcxOGFlYTY1NDMzNWM3MzYyOTNjMjVjMjBkNTEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMjE1MDMxOQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAzMzEwMEBxcS5jb20AAAAAAAAAAAAAAAAAAAAAAAAAADMxNDI1ZWVkZGJkYTZlN2MxMDNiZmQzY2FkMWJjYjcwhhymVYYcplU%3DZm
+.imooc.com	TRUE	/	FALSE	1487164698	imooc_isnew	1
+.imooc.com	TRUE	/	FALSE	1487164698	imooc_isnew_ct	1455628698
+.imooc.com	TRUE	/	FALSE	1487164698	imooc_uuid	cdc148a0-b329-46be-abc5-950d7d53028f
+.imooc.com	TRUE	/	FALSE		loginstate	1
+www.imooc.com	FALSE	/	FALSE	1458220698	last_login_username	33100%40qq.com

@@ -1,0 +1,47 @@
+用法:
+  $ ./manage.py runserver
+  localhost:8000/index    访问首页
+  localhost:8000/admin    后台管理 (usr:amdin  pwd:admin)
+  默认使用Mysql  切换sqlite 需要修改 setings.py
+
+
+基于Django的Blog测试 MTV
+文件说明:
+   MyBlog: 网站的配置相关
+        setting.py: 基本配置
+        urls.py: 配置url路径与views之间的关系
+        wsgi: web server gateway interface
+   blog:
+        admin.py: 注册模板(models)
+                (env)$ ./manage.py syncdb # 同步数据库
+                (env)$ ./manage.py makemigrations  # Creates new migration(s) for apps
+                (env)$ ./manage.py migrate  # Updates database schema
+        models.py: 模块
+        tests.py: 测试
+        views.py: 视图
+
+   templates: 网站模板
+        (注意 index.html 里的css 并没有直接使用相对路径加载 相对加载效率低且需要进行额外的配置见(settings.py))
+
+手动建立Django 过程:
+   创建虚拟环境(非必要):
+        $ virtualenv ./MyBlogVirtualenv  # 会创建一个只包含必要python库的环境
+        $ Source ./MyBlogVirtualenv/bin/activate # 在当前命令行端加载这个虚拟环境 $ deactivate 退出
+   建立Django:
+        (env)$ pip install django==1.8.2 # 在当前环境中安装Django pthon库 $ pip freeze 导出
+        (env)$ pip install MySQL-python # 默认使用sqlite
+        (env)$ django-admin startproject MyBlog
+        (env)$ django-admin startapp blog # 或 (env)$ ./manage.py startapp blog
+        (env)$ mkdir templates
+
+   运行测试服务:
+        (env)$ ./manage.py runserver
+
+./manage.py 其它常用命令:
+    validate: 检查配置是否有语法错误
+    manage.py sqlall yourdatabas: 显示mysql语法
+
+django配置数据库为mysql:
+http://jingyan.baidu.com/article/cd4c2979e87e0a756e6e6083.html
+
+

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>购物车</title>
+    <style>
+        .r{
+         font-size: 12px;
+        }
+    </style>
+</head>
+<body style="margin: 50px">
+    <table border="1" bordercolor="#a0c6e5" style="border-collapse: collapse;text-align: center">
+        <tr>
+            <td>编号</td>
+            <td>书名</td>
+            <td>数量</td>
+            <td>单价</td>
+            <td>合计</td>
+            <td>操作</td>
+        </tr>
+        {% for cart in carts %}
+        <tr>
+            <td class="r">{{cart.id}}</td>
+            <td class="r">{{ cart.book_name }}</td>
+            <td class="r"><input type="text" value="{{cart.qty}}" id="thisqty{{cart.id}}" name="thisqty" style="width:20px;height:20px;text-align: center"/></td>
+            <td class="r">{{cart.price}}</td>
+            <td class="r">{%  widthratio cart.qty 1 cart.price  %}</td>
+            <td class="r"><a href="javascript:void(0)" id="{{cart.id}}" onclick="modify(id)">修改</a>
+                || <a href="javascript:void(0)"  onclick="delcart({{cart.id}})">删除</a></td></tr>
+        {% endfor %}
+    </table>
+</body>
+<script  src="http://apps.bdimg.com/libs/jquery/1.11.1/jquery.min.js"></script>
+<script>
+   function modify(id){
+        $.post("/cart/"+id+"/cartupdate/",{qty:$("#thisqty"+id).val()},function(data){
+            if(data){
+                alert('修改成功!')
+                window.location.reload();
+            }else{
+                alert('修改失败!')
+            }
+        })
+   }
+   function delcart(id){
+        $.ajax({
+        url:"/cart/"+id+"/cartdel",
+        type:'POST',
+        datatype:'JSON',
+        success:function(data){
+           if(data){
+                alert('删除成功!')
+            }else{
+                alert('删除失败!')
+            }
+        }
+        })
+   }
+</script>
+</html>

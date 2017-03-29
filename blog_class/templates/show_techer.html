@@ -1,0 +1,26 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link  href="{% static 'css/show_techer.css' %}" type="text/css"/>
+    <script src="{% static 'js/show_all.js' %}"></script>
+    <title></title>
+</head>
+<body>
+    <table class="table">
+        {% for techer in techers %}
+        <tr>
+            <td>
+                {{ techer.name }} &nbsp;老师:
+            </td>
+        </tr>
+       <tr>
+           {% for stu in techer.student_set.all %}
+           <td> {{ stu.name }}</td>
+           {%endfor  %}
+       </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

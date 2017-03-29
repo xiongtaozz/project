@@ -1,0 +1,19 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="{% static 'css/index.css' %}" rel="stylesheet">
+    <script src="{% static 'js/jquery-2.1.4.min.js' %}"></script>
+    <script src="{% static 'js/ajax.js' %}"></script>
+</head>
+<body>
+    请输入
+    <input type="text" name="word" id="word" onkeyup="do_ajax()"><span id="word_info">12</span>
+    <input type="submit" id="submit" value="搜索" src="" onclick="drop_up()">
+    <div id="drop_down">
+        <ul class="list"  name="word_txt" id="word_txt"></ul>
+    </div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+主题内容: Ajax
+
+什么是 AJAX ？
+    AJAX = 异步 JavaScript 和 XML。
+    AJAX 是一种用于创建快速动态网页的技术。
+    通过在后台与服务器进行少量数据交换，AJAX 可以使网页实现异步更新。这意味着可以在不重新加载整个网页的情况下，对网页的某部分进行更新。
+    传统的网页（不使用 AJAX）如果需要更新内容，必需重载整个网页面。
+    有很多使用 AJAX 的应用程序案例：新浪微博、Google 地图、开心网等等。
+
+XMLHttpRequest 对象
+    所有现代浏览器均支持 XMLHttpRequest 对象（IE5 和 IE6 使用 ActiveXObject）。
+    XMLHttpRequest 用于在后台与服务器交换数据。这意味着可以在不重新加载整个网页的情况下，对网页的某部分进行更新
+
+    创建 XMLHttpRequest 对象的语法：
+    variable=new XMLHttpRequest();
+
+    老版本的 Internet Explorer （IE5 和 IE6）使用 ActiveX 对象：
+    variable=new ActiveXObject("Microsoft.XMLHTTP");
+
+    为了应对所有的现代浏览器，包括 IE5 和 IE6，请检查浏览器是否支持 XMLHttpRequest 对象。如果支持，则创建 XMLHttpRequest 对象。
+    如果不支持，则创建 ActiveXObject ：
+    var xmlhttp;
+    if (window.XMLHttpRequest)
+      {// code for IE7+, Firefox, Chrome, Opera, Safari
+      xmlhttp=new XMLHttpRequest();
+      }
+    else
+      {// code for IE6, IE5
+      xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+      }
+参考链接:
+http://www.w3school.com.cn/ajax/ajax_xmlhttprequest_send.asp
+http://hemin.cn/jq/jQuery.ajax.html

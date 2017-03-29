@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="" >
+    <script type="text/javascript" src="../static/js/jquery.min.js"></script>
+    <title>测试</title>
+    <style>
+        .p_demo,div{
+            width: 130px;
+            border: solid 1px black;
+        }
+    </style>
+    <script type="text/javascript">
+        //jquery
+        /*$(function(){
+           $('#but').click(function(){
+                $('#but').attr('class','demo')
+            })
+        })*/
+        // 无视动态加载页面
+        /*$(function(){
+            $('#but').on('click',function(){
+                $('#but').attr('class','demo')
+                $('#id_div').show()
+            })
+        })*/
+        //还可以这样写
+        // html id or class 下面的说有html内容
+        // text id or class 下面的文本信息
+        // val  id or class 下面所有的值
+        //$(function(){
+        //    $('#but').click(function(){
+        //         alert($('#inp').val())
+        //         $('.demo').text('<h1>'+$('#inp').val()+'</h1>')
+        //    })
+        //})
+
+        //if (a > 1){
+        //    document.write('<h1>Hello</h1>')
+        //}else{
+        //    document.write('<h6>Hello</h6>')
+        //}
+        //switch (a){
+        //    case 1:
+        //        alert(1)
+        //        break
+         //   case 2:
+        //        alert(2)
+        //        break
+        //    default :
+        //        alert(3)
+        //}
+        //function add(){
+        //    $('#id_div').show()
+        //}
+
+        //$(function(){
+            //alert(document.getElementById('id_div').value)
+            //$('#but').click(function(){
+            //    $('#id_div').hide()
+            //})
+            //$('#but').on('click',function(){
+            //   $('#id_div').hide()
+            //})
+        //})
+
+        function but(a, b, c){
+            x = document.getElementById('inp').value
+            alert(x)
+        }
+        $(function(){
+            /*$('#but').click(function(){
+                alert($('#id_div').html())
+            })*/
+
+            $('#but').on('click',function(){
+                $('#id_div').hide()
+            })
+        })
+    </script>
+</head>
+<body>
+    <p id = 'demo'  class = 'demo'>hello</p>
+    <input name="" type="text" id="inp" />
+    <button type="button" id = 'but' >点击这里</button>
+    <div id = 'id_div' style="border: solid 1px red">
+            <p>今天</p>
+    </div>
+<ul>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="http://apps.bdimg.com/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        var num=10;
+        var strm='';
+        $(function(){
+            for(var i=0;i<num;i++){
+                 //$('#this_div').html(i)
+                var str='';
+                if(i>=3){
+                    str +='&nbsp;&nbsp;&nbsp;*'
+                    for (var x=0;x<=i-2;x++){
+                        str +='&nbsp;&nbsp;&nbsp;&nbsp;'
+                    }
+                    str +='&nbsp;&nbsp;&nbsp;*'
+                }else if(i==2){
+                    str +='&nbsp;&nbsp;&nbsp;*'+'&nbsp;&nbsp;&nbsp;&nbsp;'+'&nbsp;&nbsp;&nbsp;*'
+                }else if(i==1){
+                    str +='&nbsp;&nbsp;&nbsp;*'+'&nbsp;&nbsp;&nbsp;*'
+                }else if(i==0){
+                    str +='&nbsp;&nbsp;&nbsp;*'
+                }else if(i==num-1){
+                    for (var x=0;x<=i;x++){
+                        str +='&nbsp;&nbsp;&nbsp;*'
+                    }
+                }
+                strm +='<span>'+str+'</span>'+'<br/>'
+            }
+            $('#this_div').html(strm)
+        });
+    </script>
+    <title></title>
+</head>
+<body>
+     <div id="this_div">
+     </div>
+</body>
+</html>

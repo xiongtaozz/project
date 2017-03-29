@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <div>
+         <h2>{{ ques.title }}</h2><br/>
+         <span>{{ ques.body }}</span><br/>
+         <span>答案</span><br/>
+          {% for ans in ques.answer_set.all %}
+              <span>{{ ans.id }}</span><br/>
+          {% endfor %}
+         <h3>评论</h3>
+         {% for conn in ques.comment_set.all %}
+          <span>{{ conn.id }}</span>
+         {% endfor %}
+    </div>
+</body>
+</html>

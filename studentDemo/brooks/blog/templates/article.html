@@ -1,0 +1,9 @@
+{% include 'header.html' %}
+	<section class="article">
+		<article>
+			<h2>{{article.title}}</h2>
+			<div class="a-info">日期：{{day}} &nbsp; 分类：{{article.category.cat_name}} &nbsp; 作者：{{article.author.name}}</div>
+			<p>{{article.content}}</p>
+		</article>
+	</section>
+{% include 'footer.html' %}

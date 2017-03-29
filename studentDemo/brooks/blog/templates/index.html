@@ -1,0 +1,15 @@
+{% include 'header.html' %}
+{% load staticfiles %}
+    <section class="article-list">
+        <ul>
+            {% for art in articles %}
+            <li>
+                <a href="{{art.url}}" target="_blank"><img class="thumb" src="{% static 'images/2.png' %}" alt=""></a>
+                <h2 class="title"><a href="{{art.url}}" target="_blank">{{art.title}}</a></h2>
+                <p class="date">日期：{{day}} &nbsp; 分类：{{art.category.cat_name}} &nbsp; 作者：{{art.author.name}}</p>
+                <p class="info">{{art.content | truncatewords:"30"}}</p>
+            </li>
+           {% endfor %}
+        </ul>
+    </section>
+{% include 'footer.html' %}

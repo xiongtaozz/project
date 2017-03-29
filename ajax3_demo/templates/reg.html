@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="/static/js/mycookies.js"></script>
+</head>
+<body>
+<form action="" method="post">
+    用户名：<input type="text" name="username" id="username" onblur="do_ajax()"><span id="username_info"></span><br>
+    密码：<input type="password"><br>
+    <input type="submit" value="注册">
+</form>
+<script>
+    function do_ajax(){
+        username = $("#username").val()
+{#        alert(username)#}
+{#        $.get("/validate/username/", {"username": username}, function(data){#}
+{#            if(data.code=="success"){#}
+{#                $("#username_info").css("color","green");#}
+{#            }else{#}
+{#                $("#username_info").css("color","red");#}
+{#            }#}
+{#            $("#username_info").html(data.message);#}
+{#        });#}
+{#        $.post("/validate/username/", {"username": username}, function(data){#}
+{#            console.log(data)#}
+{#            if(data.code=="success"){#}
+{#                $("#username_info").css("color","green");#}
+{#            }else{#}
+{#                $("#username_info").css("color","red");#}
+{#            }#}
+{#            $("#username_info").html(data.message);#}
+{#        });#}
+        $.ajax({
+            url: "/validate/username/",
+            type: "POST",
+            data: {"username": username},
+            dataType: "xml",
+            success: function(data){
+{#                console.log(data);#}
+{#                code = data.code;#}
+{#                message = $("message",data).text();#}
+                code = $("code",data).text();
+                message = $("message",data).text();
+                if(code=="success"){
+                    $("#username_info").css("color","green");
+                }else{
+                    $("#username_info").css("color","red");
+                }
+                $("#username_info").html(message);
+            },
+            error: function(){
+                alert(111)
+            }
+        });
+    }
+</script>
+</body>
+</html>

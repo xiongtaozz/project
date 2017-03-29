@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>购物车登陆</title>
+    <style>
+        div{
+             margin:0 auto;
+        }
+        form{
+            margin:0 auto;
+        }
+    </style>
+</head>
+<body  >
+    <div style=" width: 400px;height: 400px">
+        <div>
+                {% if form.errors %}
+                <p style="color: red;">
+                    {# pulralize 是filter，用来判断是否为添加's'来表示单词的复数形式#}
+                    Please correct the error{{ form.errors|pluralize }} below.
+                </p>
+                {% endif %}
+                    <form method="post" action='/cart/login/'>
+                          <table style="border: 1px">
+                              <tr>
+                                  <td>
+                                      用&nbsp;&nbsp;户&nbsp;&nbsp;名:
+                                  </td>
+                                  <td>
+                                      <input type="text" name="username"/><br/>
+                                  </td>
+                              </tr>
+                              <tr>
+                                  <td>
+                                      用户密码:
+                                  </td>
+                                  <td style="align: left">
+                                      <input type="password" name="password"><br/>
+                                  </td>
+                              </tr>
+                              <tr>
+                                  <td colspan="2">
+                                      <input type="submit" value="登陆">
+                                  </td>
+                              </tr>
+                          </table>
+                        {% comment %}{{ form.as_p}}{% endcomment %}
+                        {% comment %}<input type="submit" value="登陆">{% endcomment %}
+                    </form>
+          </div>
+    </div>
+</body>
+</html>

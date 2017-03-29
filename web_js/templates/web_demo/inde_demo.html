@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script>
+        //声明一个变量
+         //var a=1;
+        //document.write(document.cookie)
+          var sum=0;
+          for (var i=1;i<101;i++){
+             // document.write(sum+='<br/>')
+              sum +=i;
+              //sum =sum +i
+          }
+        document.write(sum+'<br/>')
+
+         var num=0;
+         var count=0;
+        do{
+            num+=15;
+            count ++;
+        }while(num<100);
+        document.write('this count is:'+ count +'<br/>')
+
+        var n=0;
+        while (n<9){
+             if(n==8){
+                 break;
+             }else{
+                 n+=1;
+             }
+        }
+        document.write('this while  is:' + n +"<br/>")
+
+        var stu=400;
+        var st =[400,500,600,550];
+        //分支语句 if esle
+        if (stu>600 && stu <650){
+            document.write('你考上了百大，清华 ，你的分数是:'+stu+"<br/>")
+        }else if(stu > 500 && stu <=600){
+            document.write('你考上了2本或者3本院校，你的分数是：'+stu+"<br/>")
+        }else{
+            document.write('你没有考上，你的分数是：'+stu+"<br/>")
+        }
+        //分支语句
+        var count_w=4;
+        switch (count_w){
+            case 1:
+                document.write('你送的玫瑰花数量是：'+count_w+"<br/>");break;
+            case 2:
+                document.write('你送的玫瑰花数量是：'+count_w+"<br/>");break;
+            case 3:
+                document.write('你送的玫瑰花数量是：'+count_w+"<br/>");break;
+            default:
+                document.write('你送的玫瑰花数量是：'+count_w+"<br/>");
+        }
+
+    </script>
+</head>
+<body>
+</body>
+</html>

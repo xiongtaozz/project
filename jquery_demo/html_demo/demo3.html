@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="http://apps.bdimg.com/libs/jquery/1.11.1/jquery.min.js" ></script>
+    <script>
+         test = function(){
+             this.age=28;
+             this.name='zhangsan'
+             this.func=function(){
+                 document.write(this.age +' '+this.name)
+             }
+         }
+         t= new test();
+         t.func()
+         alert(t.func)
+    </script>
+</head>
+
+<body>
+
+</body>
+</html>

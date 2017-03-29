@@ -1,0 +1,25 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link type="text/css" href="{% static 'css/show_techer.css' %}"/>
+    <script language="JavaScript" src="{% static 'js/show_techer.js' %}"></script>
+    <title></title>
+</head>
+
+<body>
+    <table>
+    {% for stu in students %}
+        <tr>
+            <td class="techer_clsss" colspan="all">{{ stu.name }} &nbsp;学生：</td>
+        </tr>
+        <tr>
+            {% for tu in stu.techers.all %}
+            <td>{{ tu.name }}</td>
+            {% endfor %}
+        </tr>
+    {% endfor %}
+    </table>
+</body>
+</html>

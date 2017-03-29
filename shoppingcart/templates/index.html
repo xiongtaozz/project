@@ -1,0 +1,44 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+    <meta charset="UTF-8">
+    <title>产品展示页面</title>
+    <link type="text/css" rel="stylesheet" href="{% static 'css/index.css' %}" />
+</head>
+
+<p>欢迎你: {{ user }},<a>退出</a>|<a href="/cart/findcart/">购物车</a></p>
+<hr/>
+<div>
+    {% for book in books %}
+     <div>
+          <img src="/static/img/{{ book.id }}.jpg"  id = '{{  book.id }}' width="120" height="60"/><br/>
+          书名:<span >{{ book.book_name }}</span><br/>
+          作者:<span>{{ book.authors}}</span><br/>
+          <a href="#" id="{{ book.book_name }}" onclick="addcart(id)">加入购物车</a>
+     </div>
+    {% endfor %}
+</div>
+</body>
+<script src="http://apps.bdimg.com/libs/jquery/1.11.1/jquery.min.js"></script>
+<script>
+     function addcart(id){
+        bookname=id
+        $.ajax({
+            url:'/cart/addcart/',
+            dataType :'json',
+            type:'POST',
+            data:{
+                bookname:bookname
+            },
+            success:bug
+       })
+       function bug(data){
+         if (data){
+             alert('加入购物车成功!')
+         }else{
+             alert('加入失败,或已经加入!')
+         }
+     }
+     }
+</script>
+</html>

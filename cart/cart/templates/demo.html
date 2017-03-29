@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script src="http://apps.bdimg.com/libs/jquery/1.11.1/jquery.min.js"></script>
+<script>
+
+    var num=640;
+            if(num >=630 && num <= 750){
+                alert('清华，百大');
+                var sex_num=0;
+                for(var i=0;i<100;i++){
+                    if(confirm('你看中不中')){
+                        sex_num=i;
+                        break;
+                    }
+                }
+                var qty=0;
+                var sum_qty=0;
+                while(true){
+                    /* switch (qty) {
+                         case  1 :
+                             if(confirm('做我女朋友好不好！')){
+                                 sum_qty +=1;
+                                 break;
+                             }else{
+                                 sum_qty +=1;
+                                 continue;
+                             }
+                         case  9 :
+                             if(confirm('做我女朋友好不好！')){
+                                 sum_qty +=9;
+                                 break;
+                             }else{
+                                 sum_qty +=9;
+                                 continue;
+                             }
+                         default :
+                             alert('没有对应的花枝数')
+                             break;
+                     };break;*/
+                    if(confirm('做我女朋友好不好！')){
+                                 qty +=1;
+                                 break;
+                             }else{
+                                 qty +=1;
+                             }
+
+                }
+                alert(qty)
+            }else if(num >= 520 && num <=629){
+                alert('一本，二本，三本以上院校');
+            }else if(num >= 450 && num <=519){
+                alert('专科院校');
+            }else{
+                alert('职业学校')
+            }
+
+</script>
+
+</body>
+</html>

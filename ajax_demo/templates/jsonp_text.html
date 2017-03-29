@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Jquery调用ashx文件返回的jsonp格式数据实例</title>
+<script type="text/javascript" src={% static 'js/jquery.min.js' %}></script>
+</head>
+<body>
+    <div id="Div1"> </div>
+    <div id="Div2"> </div>
+    <div id="Div3"> </div>
+    <div id="Div4"> </div>
+    <script type="text/javascript" >
+        //回调函数1
+        function success_jsonpCallback11(data) {
+            var $ul = $("<ul></ul>");
+            $.each(data, function (i, v) {
+                $("<li/>").text(v["id"] + " " + v["name"]).appendTo($ul)
+            });
+            $("#Div2").html($ul);
+        }
+        //回调函数2
+        function success_jsonpCallback22(data) {
+            var $ul = $("<ul></ul>");
+            $.each(data, function (i, v) {
+                $("<li/>").text(v["OrderID"] + " " + v["CustomerID"]).appendTo($ul)
+            });
+            $("#Div4").html($ul);
+        }
+        //页面加载完成后执行下面代码
+        $(document).ready(function () {
+            //读取Ashx文件中直接返回的字符串
+            $.ajax({
+                url: 'cmdHandler.ashx',
+                data: { StatusCode: 1 },
+                dataType: "jsonp",
+                jsonp: "jsonpcallback",
+                success: function (data) {
+                    var $ul = $("<ul></ul>");
+                    $.each(data, function (i, v) {
+                        $("<li/>").text(v["id"] + " " + v["name"]).appendTo($ul)
+                    });
+                    $("#Div1").html($ul);
+                }
+            });
+            //读取Ashx文件中直接返回的字符串带回调函数名称
+            $.ajax({
+                type: "get",
+                async: false,
+                url: "cmdHandler.ashx",
+                data: { StatusCode: 1 },
+                dataType: "jsonp",
+                jsonp: "jsonpcallback", //传递给请求处理程序或页面的，用以获得jsonp回调函数名的参数名(默认为:callback) 
+                jsonpCallback: "success_jsonpCallback1", //自定义的jsonp回调函数名称，默认为jQuery自动生成的随机函数名 
+                success: function (json) {
+                    //在此之前若没有定义回调函数success_jsonpCallback1则执行下面的代码
+                    var $ul = $("<ul></ul>");
+                    $.each(json, function (i, v) {
+                        $("<li/>").text(v["id"] + " " + v["name"]).appendTo($ul)
+                    });
+                    $("#Div2").html($ul);
+                },
+                error: function () {
+                    alert('fail');
+                }
+            });
+            //读取Ashx文件中返回的数据库字符串
+            $.ajax({
+                type: "get",
+                async: false,
+                url: "cmdHandler.ashx",
+                data: { StatusCode: 2 },
+                dataType: "jsonp",
+                jsonp: "jsonpcallback",
+                success: function (json) {
+                    var $ul = $("<ul></ul>");
+                    $.each(json, function (i, v) {
+                        $("<li/>").text(v["OrderID"] + " " + v["CustomerID"]).appendTo($ul)
+                    });
+                    $("#Div3").html($ul);
+                },
+                error: function () {
+                    alert('fail');
+                }
+            });
+            //读取Ashx文件中返回的数据库字符串带回调函数名称
+            $.ajax({
+                type: "get",
+                async: false,
+                url: "cmdHandler.ashx",
+                data: { StatusCode: 2 },
+                dataType: "jsonp",
+                jsonp: "jsonpcallback", //传递给请求处理程序或页面的，用以获得jsonp回调函数名的参数名(默认为:callback) 
+                jsonpCallback: "success_jsonpCallback2", //自定义的jsonp回调函数名称，默认为jQuery自动生成的随机函数名 
+                success: function (json) {
+                    //在此之前若没有定义回调函数success_jsonpCallback2则执行下面的代码
+                    var $ul = $("<ul></ul>");
+                    $.each(json, function (i, v) {
+                        $("<li/>").text(v["OrderID"] + " " + v["CustomerID"]).appendTo($ul)
+                    });
+                    $("#Div4").html($ul);
+                },
+                error: function () {
+                    alert('fail');
+                }
+            });
+            /* 回调函数写在末尾时候不起作用
+            function success_jsonpCallback(data) {
+                alert("测试成功");
+            } 
+            */
+    });
+</script>
+</body>
+</html>

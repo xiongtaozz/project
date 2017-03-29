@@ -1,0 +1,9 @@
+{% extends 'depot/base.html' %}
+{% block create_book %}
+        <form method="post" action="/text/crate_book/">{% csrf_token %}
+            <div>
+                {{ form.as_p }}
+            </div>
+            <input type="submit" value="注册" /> || <input type="reset" value="重置"/></tr>
+    </form>
+{% endblock %}

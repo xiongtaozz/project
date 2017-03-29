@@ -1,0 +1,55 @@
+1、学习交流&答疑
+2、django国际化(多语言支持)
+
+三个例子：
+1、星期的国际化显示（view里面使用）
+2、多语言支持的模板页面（模板里面使用）
+3、admin后台支持多语言（model里面使用）
+
+问题：
+你现在需要做一个外贸网站，需要将你的商品卖给全世界各地的买家，怎么在你的网站
+中自动显示与其匹配的语言。
+
+ugettext_lazy
+ugettext
+
+资料：
+http://www.djangobook.com/en/2.0/chapter19.html
+https://docs.djangoproject.com/en/1.8/topics/i18n/translation/
+http://www.marinamele.com/taskbuster-django-tutorial/internationalization-localization-languages-time-zones
+https://docs.djangoproject.com/en/1.8/topics/i18n/translation/#gettext-on-windows
+
+demo1:
+1、引入：from django.utils.translation import ugettext as _， 对要翻译的文字进行处理
+2、如何自己定义语言文件：
+a，创建一个locale目录，
+b，django-admin.py makemessages -l zh_CN(django版本:zh-hans)  # 不同语言,不同表示 zh_tw xx_dw
+注意:python manage.py makemessages -l zh_CN
+python manage.py makemessages -a
+c,django-admin.py compilemessages 生成二进制
+3、USE_I18N = True  钩子
+# 指定语言包的路径
+LOCALE_PATHS = (
+    os.path.join(BASE_DIR, 'locale'),
+)
+加入中间件：'django.middleware.locale.LocaleMiddleware'
+# 在模板上下文里面使用
+'django.template.context_processors.i18n'
+
+步骤：
+1、使用ugettext
+2、将字符串翻译成需要支持的语言，并编译成po文件
+（django-admin.py makemessages -l zh_CN）
+（django-admin.py compilemessages） --xxx.mo
+
+
+3、'django.middleware.locale.LocaleMiddleware'
+
+po的文件语言翻译文件，mo是编译之后的语言文件
+
+课后练习：
+将课程中的几个demo内容改成支持韩语的网站
+
+和国际化相关的另外一个问题：
+Django时区问题：
+链接：http://pan.baidu.com/s/1i4w6eXn 密码：ouvx

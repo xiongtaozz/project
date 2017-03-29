@@ -1,0 +1,48 @@
+班会主题: mysql基础&结合django数据初始化
+班会笔记:
+数据库开发工程
+mysql,oracle,sql server,sqlite3,Nosql,mangodb
+mysql ----> 中小型企业   ---安全级数不高
+oracle ----> 中大型企业  ---价格
+sql server ---> 学生时代 ---
+
+使用:
+1,增删改查(入门级)
+    select 查询
+    update 更新
+    delete 删除
+2,效率(熟练级)
+    尽量减少 * ---对sql优化
+    添加索引
+    创建视图
+3, 触发器,事件,存储过程(返回内容小)
+
+图形工具:naivcat
+sql语句创建数据
+构造数据
+数据迁移  (sql语句--xxx.sql,语言操作)
+
+数据同步的时候:
+django 1.8以上
+1,settings --- DATAVASES 配置
+2,makemigrations
+3,syncdb
+
+
+-- select st.sname,avg(sc.grade) avg_score from
+-- demo_student st,demo_score sc
+-- WHERE
+-- st.id = sc.sno_id and
+-- st.classno ='95033'
+-- GROUP BY st.sname
+-- 内连接
+-- 左连接 右链接
+select st.sname,avg(sc.grade) avg_score from
+demo_student st RIGHT JOIN demo_score sc  ON
+st.id = sc.sno_id
+WHERE
+st.classno ='95033'
+GROUP BY st.sname
+-- 子查询 (不建议让大家使用,但是一定要理解里面的概念)
+
+资料链接:http://www.cnblogs.com/moinmoin/archive/2011/10/16/2214321.html

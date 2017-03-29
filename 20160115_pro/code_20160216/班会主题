@@ -1,0 +1,18 @@
+1.Python标准库:urllib urllib2(*) httplib socket pyquery(暴力) -->2.7.x
+2.自由交流
+
+爬虫抓取先了解:
+    HTML (超文本标记语言)
+    HTTP (超文本传输协议),HTTPS(加密协议),FTP,TCP,UDP
+
+客户端(client) --- 服务器(server) 交互
+
+1.拓展两个指点
+  i:cookie --->cookielib
+  注:
+  cookie:6k 存储在客户端数据
+  session:存储在服务端数据 300K
+  ii:代理
+2.爬去麦子官网所有教师信息
+3.答疑
+

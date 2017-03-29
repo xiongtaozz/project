@@ -1,0 +1,7 @@
+DEBUG:root:函数名:func1, 参数:ArgSpec(args=[], varargs=None, keywords=None, defaults=None)
+DEBUG:root:函数名:func2, 参数:ArgSpec(args=[], varargs=None, keywords=None, defaults=None)，调用时间：2016-11-09 21:58:36
+DEBUG:root:函数名:func1, 参数:ArgSpec(args=[], varargs=None, keywords=None, defaults=None)
+DEBUG:root:函数名:func2, 参数:ArgSpec(args=[], varargs=None, keywords=None, defaults=None)，调用时间：2016-11-10 16:23:39
+DEBUG:root:函数名:func1, 参数:ArgSpec(args=[], varargs=None, keywords=None, defaults=None)
+DEBUG:root:函数名:func2, 参数:ArgSpec(args=[], varargs=None, keywords=None, defaults=None)，调用时间：2016-11-10 16:40:56
+DEBUG:root:函数名:func3, 参数:ArgSpec(args=['arg'], varargs=None, keywords=None, defaults=None)，调用时间：2016-11-10 16:40:56

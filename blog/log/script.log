@@ -1,0 +1,471 @@
+2016-01-12 11:48:37,982 [Thread-2:14792] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /index/
+Traceback (most recent call last):
+  File "D:\parcms\python\lib\site-packages\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\parcms\workbase\blog\blog_app\views.py", line 23, in index
+    articles = get_page(Article.objects.all(), 10)  # 杩欓噷鏄渶鏂版枃绔?鎸夌収鏃堕棿鍊掑簭
+TypeError: get_page() takes exactly 3 arguments (2 given)
+2016-01-12 11:49:55,118 [Thread-2:6532] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /index/
+Traceback (most recent call last):
+  File "D:\parcms\python\lib\site-packages\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\parcms\workbase\blog\blog_app\views.py", line 29, in index
+    article_recommends = get_page(req,Article.objects.filter(is_recommends=True).order_by('-pk'), 6)
+  File "D:\parcms\python\lib\site-packages\django\db\models\manager.py", line 127, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\parcms\python\lib\site-packages\django\db\models\query.py", line 679, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "D:\parcms\python\lib\site-packages\django\db\models\query.py", line 697, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "D:\parcms\python\lib\site-packages\django\db\models\sql\query.py", line 1304, in add_q
+    clause, require_inner = self._add_q(where_part, self.used_aliases)
+  File "D:\parcms\python\lib\site-packages\django\db\models\sql\query.py", line 1332, in _add_q
+    allow_joins=allow_joins, split_subq=split_subq,
+  File "D:\parcms\python\lib\site-packages\django\db\models\sql\query.py", line 1144, in build_filter
+    lookups, parts, reffed_aggregate = self.solve_lookup_type(arg)
+  File "D:\parcms\python\lib\site-packages\django\db\models\sql\query.py", line 1030, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "D:\parcms\python\lib\site-packages\django\db\models\sql\query.py", line 1391, in names_to_path
+    "Choices are: %s" % (name, ", ".join(available)))
+FieldError: Cannot resolve keyword 'is_recommends' into field. Choices are: category, category_id, click_count, comment, content, date_publish, desc, id, is_recommend, tag, title, user, user_id
+2016-01-12 21:18:56,209 [Thread-2:12432] [django.request:170] [base:get_response] [WARNING]- Not Found: /
+2016-01-12 21:18:57,404 [Thread-3:11776] [django.request:170] [base:get_response] [WARNING]- Not Found: /favicon.ico
+2016-01-12 21:18:57,430 [Thread-4:13300] [django.request:170] [base:get_response] [WARNING]- Not Found: /favicon.ico
+2016-01-13 10:30:55,750 [Thread-2:5904] [django.request:170] [base:get_response] [WARNING]- Not Found: /
+2016-01-13 10:30:56,118 [Thread-3:21804] [django.request:170] [base:get_response] [WARNING]- Not Found: /favicon.ico
+2016-01-13 10:30:56,150 [Thread-4:16664] [django.request:170] [base:get_response] [WARNING]- Not Found: /favicon.ico
+2016-01-13 17:07:04,075 [Thread-2:21232] [django.request:170] [base:get_response] [WARNING]- Not Found: /
+2016-01-13 17:07:04,177 [Thread-3:17616] [django.request:170] [base:get_response] [WARNING]- Not Found: /favicon.ico
+2016-01-13 17:07:04,187 [Thread-4:5908] [django.request:170] [base:get_response] [WARNING]- Not Found: /favicon.ico
+2016-01-13 17:07:08,730 [Thread-5:20232] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /index/
+Traceback (most recent call last):
+  File "D:\parcms\python\lib\site-packages\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\parcms\workbase\blog\blog_app\views.py", line 28, in index
+    'tag').annotate(sum_time=Sum('cmment_set__id'))
+  File "D:\parcms\python\lib\site-packages\django\db\models\query.py", line 794, in annotate
+    obj.query.add_annotation(annotation, alias, is_summary=False)
+  File "D:\parcms\python\lib\site-packages\django\db\models\sql\query.py", line 977, in add_annotation
+    summarize=is_summary)
+  File "D:\parcms\python\lib\site-packages\django\db\models\aggregates.py", line 20, in resolve_expression
+    c = super(Aggregate, self).resolve_expression(query, allow_joins, reuse, summarize)
+  File "D:\parcms\python\lib\site-packages\django\db\models\expressions.py", line 491, in resolve_expression
+    c.source_expressions[pos] = arg.resolve_expression(query, allow_joins, reuse, summarize, for_save)
+  File "D:\parcms\python\lib\site-packages\django\db\models\expressions.py", line 448, in resolve_expression
+    return query.resolve_ref(self.name, allow_joins, reuse, summarize)
+  File "D:\parcms\python\lib\site-packages\django\db\models\sql\query.py", line 1527, in resolve_ref
+    self.get_initial_alias(), reuse)
+  File "D:\parcms\python\lib\site-packages\django\db\models\sql\query.py", line 1466, in setup_joins
+    names, opts, allow_many, fail_on_missing=True)
+  File "D:\parcms\python\lib\site-packages\django\db\models\sql\query.py", line 1391, in names_to_path
+    "Choices are: %s" % (name, ", ".join(available)))
+FieldError: Cannot resolve keyword 'cmment_set' into field. Choices are: category, category_id, click_count, comment, content, date_publish, desc, id, is_recommend, tag, title, user, user_id
+2016-01-13 17:33:18,230 [Thread-2:21388] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /index/
+Traceback (most recent call last):
+  File "D:\parcms\python\lib\site-packages\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\parcms\workbase\blog\blog_app\views.py", line 29, in index
+    artks = Article.objects.all().order_by('-click_count').values('title', 'content', 'click_count','date_publish', 'tag').annotate(sum_time=Sum('cmment_set__id'))
+  File "D:\parcms\python\lib\site-packages\django\db\models\query.py", line 794, in annotate
+    obj.query.add_annotation(annotation, alias, is_summary=False)
+  File "D:\parcms\python\lib\site-packages\django\db\models\sql\query.py", line 977, in add_annotation
+    summarize=is_summary)
+  File "D:\parcms\python\lib\site-packages\django\db\models\aggregates.py", line 20, in resolve_expression
+    c = super(Aggregate, self).resolve_expression(query, allow_joins, reuse, summarize)
+  File "D:\parcms\python\lib\site-packages\django\db\models\expressions.py", line 491, in resolve_expression
+    c.source_expressions[pos] = arg.resolve_expression(query, allow_joins, reuse, summarize, for_save)
+  File "D:\parcms\python\lib\site-packages\django\db\models\expressions.py", line 448, in resolve_expression
+    return query.resolve_ref(self.name, allow_joins, reuse, summarize)
+  File "D:\parcms\python\lib\site-packages\django\db\models\sql\query.py", line 1527, in resolve_ref
+    self.get_initial_alias(), reuse)
+  File "D:\parcms\python\lib\site-packages\django\db\models\sql\query.py", line 1466, in setup_joins
+    names, opts, allow_many, fail_on_missing=True)
+  File "D:\parcms\python\lib\site-packages\django\db\models\sql\query.py", line 1391, in names_to_path
+    "Choices are: %s" % (name, ", ".join(available)))
+FieldError: Cannot resolve keyword 'cmment_set' into field. Choices are: category, category_id, click_count, comment, content, date_publish, desc, id, is_recommend, tag, title, user, user_id
+2016-01-13 17:33:53,721 [Thread-2:19200] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /index/
+Traceback (most recent call last):
+  File "D:\parcms\python\lib\site-packages\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\parcms\workbase\blog\blog_app\views.py", line 29, in index
+    artks = Article.objects.order_by('-click_count').values('title', 'content', 'click_count','date_publish', 'tag').annotate(sum_time=Sum('cmment_set__id'))
+  File "D:\parcms\python\lib\site-packages\django\db\models\query.py", line 794, in annotate
+    obj.query.add_annotation(annotation, alias, is_summary=False)
+  File "D:\parcms\python\lib\site-packages\django\db\models\sql\query.py", line 977, in add_annotation
+    summarize=is_summary)
+  File "D:\parcms\python\lib\site-packages\django\db\models\aggregates.py", line 20, in resolve_expression
+    c = super(Aggregate, self).resolve_expression(query, allow_joins, reuse, summarize)
+  File "D:\parcms\python\lib\site-packages\django\db\models\expressions.py", line 491, in resolve_expression
+    c.source_expressions[pos] = arg.resolve_expression(query, allow_joins, reuse, summarize, for_save)
+  File "D:\parcms\python\lib\site-packages\django\db\models\expressions.py", line 448, in resolve_expression
+    return query.resolve_ref(self.name, allow_joins, reuse, summarize)
+  File "D:\parcms\python\lib\site-packages\django\db\models\sql\query.py", line 1527, in resolve_ref
+    self.get_initial_alias(), reuse)
+  File "D:\parcms\python\lib\site-packages\django\db\models\sql\query.py", line 1466, in setup_joins
+    names, opts, allow_many, fail_on_missing=True)
+  File "D:\parcms\python\lib\site-packages\django\db\models\sql\query.py", line 1391, in names_to_path
+    "Choices are: %s" % (name, ", ".join(available)))
+FieldError: Cannot resolve keyword 'cmment_set' into field. Choices are: category, category_id, click_count, comment, content, date_publish, desc, id, is_recommend, tag, title, user, user_id
+2016-01-13 17:34:58,108 [Thread-2:4212] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /index/
+Traceback (most recent call last):
+  File "D:\parcms\python\lib\site-packages\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\parcms\workbase\blog\blog_app\views.py", line 29, in index
+    artks = Article.objects.order_by('-click_count').values('title', 'content', 'click_count','date_publish', 'tag').annotate(sum_time=Sum('cmment_set'))
+  File "D:\parcms\python\lib\site-packages\django\db\models\query.py", line 794, in annotate
+    obj.query.add_annotation(annotation, alias, is_summary=False)
+  File "D:\parcms\python\lib\site-packages\django\db\models\sql\query.py", line 977, in add_annotation
+    summarize=is_summary)
+  File "D:\parcms\python\lib\site-packages\django\db\models\aggregates.py", line 20, in resolve_expression
+    c = super(Aggregate, self).resolve_expression(query, allow_joins, reuse, summarize)
+  File "D:\parcms\python\lib\site-packages\django\db\models\expressions.py", line 491, in resolve_expression
+    c.source_expressions[pos] = arg.resolve_expression(query, allow_joins, reuse, summarize, for_save)
+  File "D:\parcms\python\lib\site-packages\django\db\models\expressions.py", line 448, in resolve_expression
+    return query.resolve_ref(self.name, allow_joins, reuse, summarize)
+  File "D:\parcms\python\lib\site-packages\django\db\models\sql\query.py", line 1527, in resolve_ref
+    self.get_initial_alias(), reuse)
+  File "D:\parcms\python\lib\site-packages\django\db\models\sql\query.py", line 1466, in setup_joins
+    names, opts, allow_many, fail_on_missing=True)
+  File "D:\parcms\python\lib\site-packages\django\db\models\sql\query.py", line 1391, in names_to_path
+    "Choices are: %s" % (name, ", ".join(available)))
+FieldError: Cannot resolve keyword 'cmment_set' into field. Choices are: category, category_id, click_count, comment, content, date_publish, desc, id, is_recommend, tag, title, user, user_id
+2016-01-14 15:11:29,226 [Thread-2:3816] [django.request:170] [base:get_response] [WARNING]- Not Found: /
+2016-01-14 15:11:29,398 [Thread-3:12764] [django.request:170] [base:get_response] [WARNING]- Not Found: /favicon.ico
+2016-01-14 15:11:29,410 [Thread-4:3384] [django.request:170] [base:get_response] [WARNING]- Not Found: /favicon.ico
+2016-01-14 15:25:47,806 [Thread-4:11636] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /login/
+Traceback (most recent call last):
+  File "D:\parcms\python\lib\site-packages\django\core\handlers\base.py", line 151, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view blog_app.views.login didn't return an HttpResponse object. It returned None instead.
+2016-01-14 15:26:08,336 [Thread-2:2084] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /login/
+Traceback (most recent call last):
+  File "D:\parcms\python\lib\site-packages\django\core\handlers\base.py", line 151, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view blog_app.views.login didn't return an HttpResponse object. It returned None instead.
+2016-01-14 16:00:48,582 [Thread-21:8896] [django.request:98] [csrf:_reject] [WARNING]- Forbidden (CSRF token missing or incorrect.): /login/
+2016-01-14 16:01:30,276 [Thread-24:17800] [django.request:98] [csrf:_reject] [WARNING]- Forbidden (CSRF token missing or incorrect.): /login/
+2016-01-14 16:01:59,923 [Thread-4:11448] [django.request:98] [csrf:_reject] [WARNING]- Forbidden (CSRF token missing or incorrect.): /login/
+2016-01-14 16:02:54,750 [Thread-7:2984] [django.request:98] [csrf:_reject] [WARNING]- Forbidden (CSRF token missing or incorrect.): /login/
+2016-01-14 16:20:59,157 [Thread-4:20192] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /login/
+Traceback (most recent call last):
+  File "D:\parcms\python\lib\site-packages\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\parcms\workbase\blog\blog_app\views.py", line 24, in login
+    user = User.objects.get(username__exact=req.POST.get('username', ''), password__exact=req.POST.get('password', ''))
+  File "D:\parcms\python\lib\site-packages\django\db\models\manager.py", line 127, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\parcms\python\lib\site-packages\django\db\models\query.py", line 334, in get
+    self.model._meta.object_name
+DoesNotExist: User matching query does not exist.
+2016-01-14 16:22:27,092 [Thread-4:3384] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /login/
+Traceback (most recent call last):
+  File "D:\parcms\python\lib\site-packages\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\parcms\workbase\blog\blog_app\views.py", line 27, in login
+    user = User.objects.get(username__exact=username, password__exact=password)
+  File "D:\parcms\python\lib\site-packages\django\db\models\manager.py", line 127, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\parcms\python\lib\site-packages\django\db\models\query.py", line 334, in get
+    self.model._meta.object_name
+DoesNotExist: User matching query does not exist.
+2016-01-14 16:23:17,368 [Thread-7:13032] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /login/
+Traceback (most recent call last):
+  File "D:\parcms\python\lib\site-packages\django\core\handlers\base.py", line 223, in get_response
+    response = middleware_method(request, response)
+  File "D:\parcms\python\lib\site-packages\django\contrib\sessions\middleware.py", line 50, in process_response
+    request.session.save()
+  File "D:\parcms\python\lib\site-packages\django\contrib\sessions\backends\db.py", line 58, in save
+    session_data=self.encode(self._get_session(no_load=must_create)),
+  File "D:\parcms\python\lib\site-packages\django\contrib\sessions\backends\base.py", line 88, in encode
+    serialized = self.serializer().dumps(session_dict)
+  File "D:\parcms\python\lib\site-packages\django\core\signing.py", line 90, in dumps
+    return json.dumps(obj, separators=(',', ':')).encode('latin-1')
+  File "D:\parcms\python\lib\json\__init__.py", line 250, in dumps
+    sort_keys=sort_keys, **kw).encode(obj)
+  File "D:\parcms\python\lib\json\encoder.py", line 207, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "D:\parcms\python\lib\json\encoder.py", line 270, in iterencode
+    return _iterencode(o, 0)
+  File "D:\parcms\python\lib\json\encoder.py", line 184, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: <User: XT> is not JSON serializable
+2016-01-14 16:29:55,971 [Thread-10:9444] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /login/
+Traceback (most recent call last):
+  File "D:\parcms\python\lib\site-packages\django\core\handlers\base.py", line 223, in get_response
+    response = middleware_method(request, response)
+  File "D:\parcms\python\lib\site-packages\django\contrib\sessions\middleware.py", line 50, in process_response
+    request.session.save()
+  File "D:\parcms\python\lib\site-packages\django\contrib\sessions\backends\db.py", line 58, in save
+    session_data=self.encode(self._get_session(no_load=must_create)),
+  File "D:\parcms\python\lib\site-packages\django\contrib\sessions\backends\base.py", line 88, in encode
+    serialized = self.serializer().dumps(session_dict)
+  File "D:\parcms\python\lib\site-packages\django\core\signing.py", line 90, in dumps
+    return json.dumps(obj, separators=(',', ':')).encode('latin-1')
+  File "D:\parcms\python\lib\json\__init__.py", line 250, in dumps
+    sort_keys=sort_keys, **kw).encode(obj)
+  File "D:\parcms\python\lib\json\encoder.py", line 207, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "D:\parcms\python\lib\json\encoder.py", line 270, in iterencode
+    return _iterencode(o, 0)
+  File "D:\parcms\python\lib\json\encoder.py", line 184, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: <User: XT> is not JSON serializable
+2016-01-14 16:30:42,497 [Thread-4:21948] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /login/
+Traceback (most recent call last):
+  File "D:\parcms\python\lib\site-packages\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\parcms\workbase\blog\blog_app\views.py", line 27, in login
+    user = User.objects.get(username__exact=username, password__exact=password)
+  File "D:\parcms\python\lib\site-packages\django\db\models\manager.py", line 127, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\parcms\python\lib\site-packages\django\db\models\query.py", line 334, in get
+    self.model._meta.object_name
+DoesNotExist: User matching query does not exist.
+2016-01-14 17:02:05,108 [Thread-4:12684] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /login/
+Traceback (most recent call last):
+  File "D:\parcms\python\lib\site-packages\django\core\handlers\base.py", line 151, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view blog_app.views.login_view didn't return an HttpResponse object. It returned None instead.
+2016-01-14 17:37:27,526 [Thread-3:9660] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /index/
+Traceback (most recent call last):
+  File "D:\parcms\python\lib\site-packages\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\parcms\workbase\blog\blog_app\views.py", line 39, in index
+    print req.session['user']
+  File "D:\parcms\python\lib\site-packages\django\contrib\sessions\backends\base.py", line 48, in __getitem__
+    return self._session[key]
+KeyError: 'user'
+2016-01-14 17:44:36,951 [Thread-2:21340] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /login/
+Traceback (most recent call last):
+  File "D:\parcms\python\lib\site-packages\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\parcms\workbase\blog\blog_app\views.py", line 33, in login_view
+    login(req, user)
+  File "D:\parcms\python\lib\site-packages\django\contrib\auth\__init__.py", line 112, in login
+    request.session[BACKEND_SESSION_KEY] = user.backend
+  File "D:\parcms\python\lib\site-packages\django\utils\functional.py", line 227, in inner
+    return func(self._wrapped, *args)
+AttributeError: 'User' object has no attribute 'backend'
+2016-01-15 15:34:56,552 [Thread-2:9180] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /
+Traceback (most recent call last):
+  File "D:\parcms\python\lib\site-packages\django\core\handlers\base.py", line 119, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "D:\parcms\python\lib\site-packages\django\core\urlresolvers.py", line 366, in resolve
+    for pattern in self.url_patterns:
+  File "D:\parcms\python\lib\site-packages\django\core\urlresolvers.py", line 402, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "D:\parcms\python\lib\site-packages\django\core\urlresolvers.py", line 396, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "D:\parcms\python\lib\importlib\__init__.py", line 37, in import_module
+    __import__(name)
+  File "D:\parcms\workbase\blog\blog\urls.py", line 21, in <module>
+    from xadmin.plugins import xversion
+  File "D:\parcms\python\lib\site-packages\xadmin\plugins\xversion.py", line 6, in <module>
+    from django.db.models.related import RelatedObject
+ImportError: No module named related
+2016-01-15 15:34:57,621 [Thread-3:12572] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /favicon.ico
+Traceback (most recent call last):
+  File "D:\parcms\python\lib\site-packages\django\core\handlers\base.py", line 108, in get_response
+    response = middleware_method(request)
+  File "D:\parcms\python\lib\site-packages\django\middleware\common.py", line 74, in process_request
+    if (not urlresolvers.is_valid_path(request.path_info, urlconf) and
+  File "D:\parcms\python\lib\site-packages\django\core\urlresolvers.py", line 647, in is_valid_path
+    resolve(path, urlconf)
+  File "D:\parcms\python\lib\site-packages\django\core\urlresolvers.py", line 522, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "D:\parcms\python\lib\site-packages\django\core\urlresolvers.py", line 366, in resolve
+    for pattern in self.url_patterns:
+  File "D:\parcms\python\lib\site-packages\django\core\urlresolvers.py", line 402, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "D:\parcms\python\lib\site-packages\django\core\urlresolvers.py", line 396, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "D:\parcms\python\lib\importlib\__init__.py", line 37, in import_module
+    __import__(name)
+  File "D:\parcms\workbase\blog\blog\urls.py", line 21, in <module>
+    from xadmin.plugins import xversion
+  File "D:\parcms\python\lib\site-packages\xadmin\plugins\xversion.py", line 6, in <module>
+    from django.db.models.related import RelatedObject
+ImportError: No module named related
+2016-01-15 15:34:58,051 [Thread-4:4232] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /favicon.ico
+Traceback (most recent call last):
+  File "D:\parcms\python\lib\site-packages\django\core\handlers\base.py", line 108, in get_response
+    response = middleware_method(request)
+  File "D:\parcms\python\lib\site-packages\django\middleware\common.py", line 74, in process_request
+    if (not urlresolvers.is_valid_path(request.path_info, urlconf) and
+  File "D:\parcms\python\lib\site-packages\django\core\urlresolvers.py", line 647, in is_valid_path
+    resolve(path, urlconf)
+  File "D:\parcms\python\lib\site-packages\django\core\urlresolvers.py", line 522, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "D:\parcms\python\lib\site-packages\django\core\urlresolvers.py", line 366, in resolve
+    for pattern in self.url_patterns:
+  File "D:\parcms\python\lib\site-packages\django\core\urlresolvers.py", line 402, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "D:\parcms\python\lib\site-packages\django\core\urlresolvers.py", line 396, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "D:\parcms\python\lib\importlib\__init__.py", line 37, in import_module
+    __import__(name)
+  File "D:\parcms\workbase\blog\blog\urls.py", line 21, in <module>
+    from xadmin.plugins import xversion
+  File "D:\parcms\python\lib\site-packages\xadmin\plugins\xversion.py", line 6, in <module>
+    from django.db.models.related import RelatedObject
+ImportError: No module named related
+2016-01-15 15:35:31,621 [Thread-5:208] [django.request:170] [base:get_response] [WARNING]- Not Found: /
+2016-01-15 15:40:00,174 [Thread-3:8960] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /blog/
+Traceback (most recent call last):
+  File "D:\parcms\python\lib\site-packages\django\core\handlers\base.py", line 151, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view blog_app.views.find_blog_id didn't return an HttpResponse object. It returned None instead.
+2016-01-15 15:40:38,131 [Thread-2:7484] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /find-blog/
+Traceback (most recent call last):
+  File "D:\parcms\python\lib\site-packages\django\core\handlers\base.py", line 151, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view blog_app.views.find_blog_id didn't return an HttpResponse object. It returned None instead.
+2016-01-25 14:12:26,793 [Thread-2:5644] [django.request:170] [base:get_response] [WARNING]- Not Found: /
+2016-01-25 14:12:27,209 [Thread-3:10144] [django.request:170] [base:get_response] [WARNING]- Not Found: /favicon.ico
+2016-01-25 14:12:27,244 [Thread-4:7240] [django.request:170] [base:get_response] [WARNING]- Not Found: /favicon.ico
+2016-02-19 11:36:31,960 [Thread-2:10484] [django.request:170] [base:get_response] [WARNING]- Not Found: /
+2016-02-19 11:36:33,151 [Thread-3:1516] [django.request:170] [base:get_response] [WARNING]- Not Found: /favicon.ico
+2016-02-19 11:36:33,173 [Thread-4:11268] [django.request:170] [base:get_response] [WARNING]- Not Found: /favicon.ico
+2016-02-19 11:38:32,513 [Thread-59:12408] [django.request:170] [base:get_response] [WARNING]- Not Found: /
+2016-02-19 14:11:38,674 [Thread-2:12872] [django.request:170] [base:get_response] [WARNING]- Not Found: /
+2016-02-19 14:16:40,394 [Thread-9:12280] [django.request:170] [base:get_response] [WARNING]- Not Found: /index/index.html
+2016-02-19 14:17:09,586 [Thread-19:8756] [django.request:170] [base:get_response] [WARNING]- Not Found: /
+2016-02-19 14:46:16,457 [Thread-2:10276] [django.request:170] [base:get_response] [WARNING]- Not Found: /blog/3
+2016-02-19 14:46:50,736 [Thread-3:3996] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /find-blog/3
+Traceback (most recent call last):
+  File "D:\parcms\python\lib\site-packages\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\parcms\workbase\blog\blog_app\views.py", line 66, in find_blog_id
+    return render_to_response('article.html', locals())
+  File "D:\parcms\python\lib\site-packages\django\shortcuts.py", line 39, in render_to_response
+    content = loader.render_to_string(template_name, context, using=using)
+  File "D:\parcms\python\lib\site-packages\django\template\loader.py", line 99, in render_to_string
+    return template.render(context, request)
+  File "D:\parcms\python\lib\site-packages\django\template\backends\django.py", line 74, in render
+    return self.template.render(context)
+  File "D:\parcms\python\lib\site-packages\django\template\base.py", line 209, in render
+    return self._render(context)
+  File "D:\parcms\python\lib\site-packages\django\template\base.py", line 201, in _render
+    return self.nodelist.render(context)
+  File "D:\parcms\python\lib\site-packages\django\template\base.py", line 903, in render
+    bit = self.render_node(node, context)
+  File "D:\parcms\python\lib\site-packages\django\template\debug.py", line 79, in render_node
+    return node.render(context)
+  File "D:\parcms\python\lib\site-packages\django\template\defaulttags.py", line 161, in render
+    values = list(values)
+TypeError: 'Article' object is not iterable
+2016-09-20 17:25:52,446 [Thread-2:14804] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /index/images/banner4.jpg
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 108, in get_response
+    response = middleware_method(request)
+  File "D:\Python27\lib\site-packages\django\middleware\common.py", line 74, in process_request
+    if (not urlresolvers.is_valid_path(request.path_info, urlconf) and
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 647, in is_valid_path
+    resolve(path, urlconf)
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 522, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 366, in resolve
+    for pattern in self.url_patterns:
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 402, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 396, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "D:\Python27\lib\importlib\__init__.py", line 37, in import_module
+    __import__(name)
+  File "D:\workbase\blog\blog\urls.py", line 20, in <module>
+    import xadmin
+ImportError: No module named xadmin
+2016-09-20 17:25:52,450 [Thread-3:15740] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /index/images/banner1.jpg
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 108, in get_response
+    response = middleware_method(request)
+  File "D:\Python27\lib\site-packages\django\middleware\common.py", line 74, in process_request
+    if (not urlresolvers.is_valid_path(request.path_info, urlconf) and
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 647, in is_valid_path
+    resolve(path, urlconf)
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 522, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 366, in resolve
+    for pattern in self.url_patterns:
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 402, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 396, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "D:\Python27\lib\importlib\__init__.py", line 37, in import_module
+    __import__(name)
+  File "D:\workbase\blog\blog\urls.py", line 20, in <module>
+    import xadmin
+ImportError: No module named xadmin
+2016-09-20 17:25:54,503 [Thread-4:568] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 119, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 366, in resolve
+    for pattern in self.url_patterns:
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 402, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 396, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "D:\Python27\lib\importlib\__init__.py", line 37, in import_module
+    __import__(name)
+  File "D:\workbase\blog\blog\urls.py", line 20, in <module>
+    import xadmin
+ImportError: No module named xadmin
+2016-09-20 17:25:55,463 [Thread-5:17948] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /index/images/banner1.jpg
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 108, in get_response
+    response = middleware_method(request)
+  File "D:\Python27\lib\site-packages\django\middleware\common.py", line 74, in process_request
+    if (not urlresolvers.is_valid_path(request.path_info, urlconf) and
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 647, in is_valid_path
+    resolve(path, urlconf)
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 522, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 366, in resolve
+    for pattern in self.url_patterns:
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 402, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 396, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "D:\Python27\lib\importlib\__init__.py", line 37, in import_module
+    __import__(name)
+  File "D:\workbase\blog\blog\urls.py", line 20, in <module>
+    import xadmin
+ImportError: No module named xadmin
+2016-09-20 17:25:55,474 [Thread-6:16568] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /index/images/banner2.jpg
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 108, in get_response
+    response = middleware_method(request)
+  File "D:\Python27\lib\site-packages\django\middleware\common.py", line 74, in process_request
+    if (not urlresolvers.is_valid_path(request.path_info, urlconf) and
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 647, in is_valid_path
+    resolve(path, urlconf)
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 522, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 366, in resolve
+    for pattern in self.url_patterns:
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 402, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 396, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "D:\Python27\lib\importlib\__init__.py", line 37, in import_module
+    __import__(name)
+  File "D:\workbase\blog\blog\urls.py", line 20, in <module>
+    import xadmin
+ImportError: No module named xadmin
+2016-09-20 17:27:26,637 [Thread-2:17688] [django.request:170] [base:get_response] [WARNING]- Not Found: /
+2016-09-21 11:18:13,976 [Thread-2:4004] [django.request:170] [base:get_response] [WARNING]- Not Found: /
+2016-09-21 11:18:14,273 [Thread-3:8480] [django.request:170] [base:get_response] [WARNING]- Not Found: /favicon.ico
+2016-09-21 11:34:35,540 [Thread-112:8260] [django.request:170] [base:get_response] [WARNING]- Not Found: /
+2016-09-21 11:34:35,792 [Thread-113:4940] [django.request:170] [base:get_response] [WARNING]- Not Found: /favicon.ico
+2016-09-21 11:37:47,526 [Thread-151:8272] [django.request:170] [base:get_response] [WARNING]- Not Found: /find-blog/index.html
+2016-09-21 11:56:17,625 [Thread-215:3140] [django.request:170] [base:get_response] [WARNING]- Not Found: /favicon.ico
+2016-09-21 12:02:10,802 [Thread-25:9272] [django.request:170] [base:get_response] [WARNING]- Not Found: /favicon.ico
+2016-09-23 14:56:54,355 [Thread-2:10192] [django.request:170] [base:get_response] [WARNING]- Not Found: /
+2016-09-23 14:56:54,604 [Thread-3:8420] [django.request:170] [base:get_response] [WARNING]- Not Found: /favicon.ico
+2016-09-23 14:56:54,812 [Thread-4:8840] [django.request:170] [base:get_response] [WARNING]- Not Found: /favicon.ico
+2017-03-27 17:11:45,424 [Thread-2:7956] [django.request:170] [base:get_response] [WARNING]- Not Found: /
+2017-03-27 17:11:49,236 [Thread-3:5220] [django.request:170] [base:get_response] [WARNING]- Not Found: /favicon.ico
+2017-03-28 16:15:01,220 [Thread-2:8840] [django.request:170] [base:get_response] [WARNING]- Not Found: /
+2017-03-28 16:15:01,349 [Thread-3:5732] [django.request:170] [base:get_response] [WARNING]- Not Found: /favicon.ico
+2017-03-28 16:49:28,318 [Thread-39:4852] [django.request:170] [base:get_response] [WARNING]- Not Found: /favicon.ico

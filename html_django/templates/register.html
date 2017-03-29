@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户注册</title>
+    <link href="../static/css/test02.css" rel="stylesheet" type="text/css">
+    <style>
+        body,div{
+            margin: 0;
+            padding: 0;
+            }
+        #header,#main{
+            margin: 0 auto;
+            width: 750px;
+            }
+{#        生成四个角标 大小为6px#}
+        .bg{
+            background-image: url(../static/images/register_bg.gif);
+            background-repeat: no-repeat;
+            width: 6px;
+            height: 6px;
+            }
+{#        定位四个角度坐标#}
+        .bg_top_left{
+            background-position:0px 0px;
+            }
+        .bg_top_right{
+            background-position:0px -6px;
+            }
+        .bg_end_left{
+            background-position:0px -12px;
+            }
+        .bg_end_right{
+            background-position:0px -18px;
+            }
+{#        生成 top 横线#}
+        .bg_top{
+            border-top:solid 1px #666666;
+            }
+{#        生成 end 横线#}
+        .bg_end{
+            border-bottom:solid 1px #666666;
+            }
+{#        生成left 竖线#}
+        .bg_left{
+            border-left:solid 1px #666666;
+            }
+{#        生成 right 竖线#}
+        .bg_right{
+            border-right:solid 1px #666666;
+            }
+        .content{
+            padding: 10px;
+            }
+{#        设置输入框样式#}
+        .inputs {
+            border:solid 1px #a4c8e0;
+            width: 150px;
+            height: 15px;
+            }
+{#        设置输入框 id为userwidth的宽度 #}
+        .userWidth{
+            width: 110px;
+            }
+{#        设置class为content 的div 样式 #}
+        .content div{
+            float: left;
+            font-size: 12px;
+            color: #000;
+            }
+{#            不允许浮动元素 #}
+        dl{
+            clear: both;
+            }
+        dt,dd{
+            float: left;
+            }
+        dt{
+            width: 130px;
+            text-align: right;
+            font-size: 14px;
+            height: 30px;
+            line-height: 25px;
+            }
+        dd{
+            font-size: 12px;
+            color: #666666;
+            width: 180px;
+            }
+    </style>
+    <script src="../static/js/jquery.min.js"></script>
+    <script>
+        /*function userFocus(){
+            userNameId = document.getElementById('userNameId')
+            userNameId.className = 'import_prompt'
+            userNameId.innerHTML = "1、由字母、数字、下划线、点、减号组成"
+                                 +"<br/>"+
+                                 "2、只能以数字、字母开头或结尾，且长度为4-18"
+        }
+        function userBlur(){
+            userName = document.getElementById('username')
+            userNameId = document.getElementById('userNameId')
+            userNameId.className = 'error_prompt'
+            rex =/\w{4,18}/
+            if (userName.value == '' | userName.value == null){
+                userNameId.innerHTML= '用户名不能为空'
+            }else{
+                if(rex.test(userName.value)){
+                    userNameId.className = 'ok_prompt'
+                    userNameId.innerHTML = "用户名格式正确"
+                }else{
+                    userNameId.innerHTML= '用户名格式不正确'
+                }
+            }
+        }*/
+        $(function(){
+            $('#username').bind({
+                'focus':function(){
+                    userNameId = $('#userNameId')
+                    userNameId.attr('class','import_prompt')
+                    userNameId.html( "1、由字母、数字、下划线、点、减号组成"
+                                         +"<br/>"+
+                                         "2、只能以数字、字母开头或结尾，且长度为4-18")},
+                'blur':function(){
+                    userName = $('#username')
+                    userNameId = $('#userNameId')
+                    userNameId.addClass('error_prompt')
+                    rex =/\w{4,18}/
+                    if (userName.value == '' | userName.value == null){
+                        userNameId.html( '用户名不能为空')
+                    }else{
+                        if(rex.test(userName.value)){
+                            userNameId.addClass( 'ok_prompt')
+                            userNameId.html("用户名格式正确")
+                        }else{
+                            userNameId.html('用户名格式不正确')
+                        }
+                    }
+                }
+            })
+        })
+    </script>
+</head>
+<body>
+ <div id = 'header'>
+     <img src="../static/images/register_logo.gif" alt="logo">
+ </div>
+<div id = 'main'>
+    <table width="100%" border="0" cellspacing="0">
+        <tr>
+            <td class="bg bg_top_left"></td>
+            <td class="bg_top"></td>
+            <td class="bg bg_top_right"></td>
+        </tr>
+        <tr>
+            <td class="bg_left"></td>
+            <td class="content">
+               <form action="" method="get" name="myFrom">
+                <dl>
+                    <dt>通行证用户名:</dt>
+                    <dd><input type="text" id="username" class = 'inputs userWidth'/>@163.com</dd>
+                    <div id="userNameId"></div>
+                </dl>
+                <dl>
+                    <dt>登录密码：</dt>
+                    <dd><input type="password" id="pwd" class="inputs"/></dd>
+                    <div id="pwdId"></div>
+                </dl>
+                <dl>
+                    <dt>重复登录密码：</dt>
+                    <dd><input type="password" id="repwd" class="inputs" /></dd>
+                    <div id="repwdId"></div>
+                </dl>
+                <dl>
+                    <dt>性别：</dt>
+                    <dd>
+                        <input name="sex" type="radio" value="" checked="checked" />男
+                        <input name="sex" type="radio" value="" />女
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>真实姓名：</dt>
+                    <dd><input type="text" id="realName" class="inputs" /></dd>
+                </dl>
+                <dl>
+                    <dt>昵称：</dt>
+                    <dd><input type="text" id="nickName" class="inputs" /></dd>
+                    <div id="nickNameId"></div>
+                </dl>
+                <dl>
+                    <dt>关联手机号：</dt>
+                    <dd><input type="text" id="tel" class="inputs"  /></dd>
+                    <div id="telId"></div>
+                </dl>
+                <dl>
+                    <dt>保密邮箱：</dt>
+                    <dd><input type="text" id="email" class="inputs" /></dd>
+                    <div id="emailId"></div>
+                </dl>
+                <dl>
+                    <dt></dt>
+                    <dd><input name="" type="image" src="../static/images/button.gif"/></dd>
+                </dl>
+               </form>
+            </td>
+            <td class="bg_right"></td>
+        </tr>
+        <tr>
+            <td class="bg bg_end_left"></td>
+            <td class="bg_end"></td>
+            <td class="bg bg_end_right"></td>
+        </tr>
+    </table>
+ </div>
+</body>
+</html>

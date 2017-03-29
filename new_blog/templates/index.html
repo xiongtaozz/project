@@ -1,0 +1,615 @@
+{% load staticfiles %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Just Believe</title>
+<!--// Stylesheets //-->
+<link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css" />
+<link href="{% static 'css/color.css' %}" rel="stylesheet" type="text/css" />
+<!--[if IE 8 ]><link href="{% static 'css/iefix.css' %}" rel="stylesheet" type="text/css" /><![endif]-->
+<!--// Javascripts //-->
+<script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/animatedcollapse.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/ddsmoothmenu.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/jquery.nivo.slider.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/jquery.infinite-carousel.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/scrolltopcontrol.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/functions.js' %}"></script>
+</head>
+
+<body>
+<!-- Top Bar Start -->
+<div id="top-bar">
+	<div class="inner">
+    	<!-- Top Bar Posts Start -->
+    	<div class="small-posts">
+        	<p>Mauris iaculis risus quis mauris vulputate at condimentum massa luctus. <a href="#">Keep Reading</a></p>
+        </div>
+        <!-- Top Bar Posts End -->
+        <!-- Top Links Start -->
+        <div class="toplinks">
+        	<a href="javascript:animatedcollapse.toggle('loginbox')" class="loginbtn">Login Now</a>
+            <!-- Login Box Start -->
+            <div id="loginbox">
+            	<h3 class="upper">User Login</h3>
+                <ul>
+                	<li class="name"><input type="text" value="User Name" class="bar" /></li>
+                    <li class="password"><input type="password" value="Password" class="bar" /></li>
+                </ul>
+                <div class="btns-sec">
+                	<button class="backcolr dark">Submit</button>
+                    <p>Need an Account? <a href="#">Sign Up</a></p>
+                </div>
+            </div>
+            <!-- Login Box End -->
+            <!-- Top Links Start -->
+            <ul class="top-links">
+            	<li><a href="#">Calender</a></li>
+                <li><a href="#">Sermons</a></li>
+                <li><a href="#">Service</a></li>
+                <li><a href="#">Map/Directions</a></li>
+                <li><a href="#">Giving</a></li>
+            </ul>
+            <!-- Top Links End -->
+        </div>
+        <!-- Top Links End -->
+        <div class="clear"></div>
+    </div>
+</div>
+<!-- Top Bar End -->
+<!-- Header Start -->
+<div id="header">
+	<div class="inner">
+    	<!-- Top Header Section Start -->
+        <div class="top-head">
+        	<!-- Logo Start -->
+        	<div class="logo">
+            	<a href="index.html"><img src="images/logo.png" alt="" /></a>
+            </div>
+            <!-- Logo End -->
+            <!-- Right Section Start -->
+            <div class="right-sec">
+            	<!-- Search Start -->
+            	<div class="search">
+                	<h5>Search Now</h5>
+                    <ul>
+                    	<li><input type="text" class="bar" /></li>
+                        <li><input type="button" class="go backcolr" value="Go" /></li>
+                    </ul>
+                </div>
+                <!-- Search End -->
+                <!-- Services Start -->
+                <div class="service-sec">
+                	<h5>Sunday Services</h5>
+                    <h5>@ 9:30 &amp; 11:00 am</h5>
+                    <p>1521 Hurt Rd, Marietta GA 30008</p>
+                </div>
+                <!-- Services End -->
+            </div>
+            <!-- Right Section End -->
+        	<div class="clear"></div>
+        </div>
+        <!-- Top Header Section End -->
+        <div class="clear"></div>
+        <!-- Navigation Start -->
+        <div class="navigation bordercolr">
+        	<div id="smoothmenu1" class="ddsmoothmenu">
+            	<ul>
+                	<li class="current-menu-item"><a href="index.html">Home</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="sermons.html">Sermons</a></li>
+                    <li><a href="#">Gallery</a>
+                    	<ul class="backcolr">
+                        	<li><a href="portfolio.html">Gallery - Grid</a></li>
+                            <li><a href="portfolio-slideshow.html">Gallery - SlideShow</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="#">Drop Down</a>
+                    	<ul class="backcolr">
+                        	<li><a href="#">Lorem ipsum</a></li>
+                            <li><a href="#">Get connected</a>
+                            	<ul>
+                                	<li><a href="#">Get involved</a></li>
+                                    <li><a href="#">Coming up</a></li>
+                                    <li><a href="#">Media</a></li>
+                                    <li><a href="#">Gospel</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Get involved</a></li>
+                            <li><a href="#">Coming up</a></li>
+                            <li><a href="#">Media</a></li>
+                            <li><a href="#">Gospel</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Pages</a>
+                    	<ul class="backcolr">
+                        	<li><a href="index.html">Home</a></li>
+                            <li><a href="blog.html">Blog</a></li>
+                            <li><a href="blog-detail.html">Blog Detail</a></li>
+                            <li><a href="events.html">Events</a></li>
+                            <li><a href="sermons.html">Sermons</a></li>
+                            <li><a href="#">Gallery</a>
+                            	<ul>
+                                	<li><a href="portfolio.html">Gallery - Grid</a></li>
+                                    <li><a href="portfolio-slideshow.html">Gallery - SlideShow</a></li>
+                                </ul>	
+                            </li>
+                            <li><a href="contact.html">Contact Us</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="clear"></div>
+            </div>
+        </div>
+        <!-- Navigation End -->
+        <div class="clear"></div>
+        <!-- Banner Section Start -->
+        <div align=center>
+<div style=“width:960px; margin:0 auto; height:90px;”>
+<script>
+(function() {
+    var s = "_" + Math.random().toString(36).slice(2);
+    document.write('<div id="' + s + '"></div>');
+    (window.slotbydup=window.slotbydup || []).push({
+        id: '730419',
+        container: s,
+        size: '960,90',
+        display: 'inlay-fix'
+    });
+})();
+</script>
+
+</div>
+</div>
+        <div class="banner-sec">
+        	<!-- Banner Start -->
+            <div class="banner">
+            	<div class="slider-wrapper theme-default">
+                    <div id="slider" class="nivoSlider">
+                        <a href="#"><img src="images/banner1.jpg" title="#banner1" alt="" /></a>
+                        <a href="#"><img src="images/banner2.jpg" title="#banner2" alt="" /></a>
+                        <a href="#"><img src="images/banner3.jpg" title="#banner3" alt="" /></a>
+                        <a href="#"><img src="images/banner4.jpg" title="#banner4" alt="" /></a>
+                    </div>
+                    <!-- Banner Caption Start -->
+                    <div id="banner1" class="nivo-html-caption">
+                    	<h4 class="white">Book of the Month</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean commodo dolor at sapien luctus non venenatis dui</p>
+                    </div>
+                    <!-- Banner Caption End -->
+                    <!-- Banner Caption Start -->
+                    <div id="banner2" class="nivo-html-caption">
+                    	<h4 class="white">Book of the Month</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean commodo dolor at sapien luctus non venenatis dui</p>
+                    </div>
+                    <!-- Banner Caption End -->
+                    <!-- Banner Caption Start -->
+                    <div id="banner3" class="nivo-html-caption">
+                    	<h4 class="white">Book of the Month</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean commodo dolor at sapien luctus non venenatis dui</p>
+                    </div>
+                    <!-- Banner Caption End -->
+                    <!-- Banner Caption Start -->
+                    <div id="banner4" class="nivo-html-caption">
+                    	<h4 class="white">Book of the Month</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean commodo dolor at sapien luctus non venenatis dui</p>
+                    </div>
+                    <!-- Banner Caption End -->
+                </div>
+            </div>
+            <!-- Banner End -->
+            <!-- Welcome Section Start -->
+            <div class="welcome">
+            	<h4 class="sec-head backcolr">Welcome to Church</h4>
+                <div class="welc-text">
+                	<a href="#"><img src="images/welcome.jpg" alt="" /></a>
+                    <p>
+                    	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean commodo dolor at sapien luctus non venenatis dui lacinia. Phasellus viverra, orci ut lacinia varius.  Phasellus viverra, orci ut lacinia varius.
+                    </p>
+                    <ul class="actions">
+                    	<li><a href="#" class="txthover"><span class="join">&nbsp;</span>Join Us</a></li>
+                        <li><a href="#" class="txthover"><span class="sermons">&nbsp;</span>Sermons</a></li>
+                        <li><a href="#" class="txthover"><span class="support">&nbsp;</span>Support</a></li>
+                    </ul>
+                    <div class="clear"></div>
+                </div>
+            </div>
+            <!-- Welcome Section End -->
+            <div class="clear"></div>
+        </div>
+        <!-- Banner Section End -->
+        <div class="clear"></div>
+    </div>
+</div>
+<!-- Header End -->
+<!-- Content Section Start -->
+<div id="contentsec">
+	<div class="inner">
+    	<!-- Notification Start -->
+    	<div class="notification">
+        	<h4 class="badge">Notifications</h4>
+            <div class="notif-data">
+            	<div class="desc">
+                	<h4 class="colr">Latest Sormens</h4>
+                    <p>Churchill High Shool Baccalaureate, June 6, 6:00 PM</p>
+                </div>
+                <div class="buttons">
+                	<a href="#" class="txthover"><span class="listen">&nbsp;</span>Listen</a>
+                    <a href="#" class="txthover"><span class="download">&nbsp;</span>Download</a>
+                </div>
+            </div>
+            <a href="#" class="closeit">&nbsp;</a>
+        </div>
+        <!-- Notification End -->
+        <!-- Advertisment Banners Section Start -->
+        <div class="advert-banners">
+        	<ul>
+            	<li>
+                	<div class="thumb">
+                    	<a href="#"><img src="images/img1.jpg" alt="" /></a>
+                        <h4 class="white">Church Live Prayer Wall</h4>
+                    </div>
+                </li>
+                <li>
+                	<div class="thumb">
+                        <a href="#"><img src="images/img2.jpg" alt="" /></a>
+                        <h4 class="white">Meet The Pastor</h4>
+                    </div>
+                </li>
+                <li>
+                	<div class="thumb">
+                        <a href="#"><img src="images/img3.jpg" alt="" /></a>
+                        <h4 class="white">Summer Events</h4>
+                    </div>
+                </li>
+            </ul>
+            
+        </div>
+        <!-- Advertisment Banners Section End -->
+        <div class="clear"></div>
+        <!-- Full Width Section Start -->
+        <div class="fullwidth box rightbar">
+            <!-- Two Third Section Start -->
+            <div class="twothird left">
+            	<!-- Two Third Section Start -->
+                <div class="twothird left">
+                    <!-- Half Box Start -->
+                    <div class="halfbox left border-right">
+                        <h3 class="heading colr">About Us</h3>
+                        <!-- Home Page Post Start -->
+                        <div class="home-post">
+                            <a href="#" class="thumb"><img src="images/img4.jpg" alt="" /></a>
+                            <h4>
+                                <a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit Aenean commodo dolor at sapien luctus non venenatis.</a>
+                            </h4>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean commodo dolor at sapien luctus non venenatis dui lacinia. Phasellus viverra, orci ut lacinia varius, nibh velit bibendum ipsum, sit amet placerat quam tellus sit amet velit. Nulla nulla magna, accumsan vitae convallis pellentesque, semper faucibus lorem.quam tellus sit amet velit. Nulla nulla magna, accumsan vitae convallis pellentesque, semper faucibus lorem. Aenean commodo dolor at sapien luctus non venenatis dui lacinia. Phasellus viverra, orci ut lacinia varius, nibh velit bibendum. semper faucibus lorem. Aenean commodo dolor at sapien luctus non venenatis dui lacinia. Phasellus viverra, orci ut lacinia varius, nibh velit bibendum. 
+                            </p>
+                            <a href="#" class="readmore">Read more</a>
+                        </div>
+                        <!-- Home Page Post End -->
+                    </div>
+                    <!-- Half Box End -->
+                    <!-- Half Box Start -->
+                    <div class="halfbox right">
+                        <h3 class="heading colr">Ministries and programs</h3>
+                        <!-- Home Page Post Start -->
+                        <div class="home-post">
+                            <a href="#" class="thumb"><img src="images/img5.jpg" alt="" /></a>
+                            <h4><a href="#">Worship and prayer</a></h4>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean commodo dolor at sapien luctus non  semper faucibus lorem. Aenean commodo dolor at
+                            </p>
+                            <a href="#" class="readmore">Read more</a>
+                        </div>
+                        <!-- Home Page Post End -->
+                        <!-- Home Page Post Start -->
+                        <div class="home-post">
+                            <a href="#" class="thumb"><img src="images/img6.jpg" alt="" /></a>
+                            <h4><a href="#">People Toghther</a></h4>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean commodo dolor at sapien luctus non semper faucibus lorem. Aenean commodo dolor at  
+                            </p>
+                            <a href="#" class="readmore">Read more</a>
+                        </div>
+                        <!-- Home Page Post End -->
+                    </div>
+                    <!-- Half Box End -->
+                </div>
+                <hr />
+                <div class="twothird left">
+                    <!-- Half Box Start -->
+                    <div class="halfbox left border-right">
+                        <h3 class="heading colr">Video Gallery</h3>
+                        <!-- Video Gallery Start -->
+                        <div class="video-gallery">
+                            <ul>
+                                <li>
+                                    <a href="#" class="thumb"><img src="images/img7.jpg" alt="" /></a>
+                                    <p><a href="#" class="bold">Donec ut nibh tellus. Proin erat urna, luctuseg ementum at, facilisis sed nunc.</a></p>
+                                </li>
+                                <li><a href="#">Aenean commodo dolor at sapien luctus (05:30)</a></li>
+                                <li><a href="#">Sapien luctus non venenatis (19:18)</a></li>
+                            </ul>
+                        </div>
+                        <!-- Video Gallery End -->
+                    </div>
+                    <!-- Half Box End -->
+                    <!-- Half Box Start -->
+                    <div class="halfbox right">
+                        <h3 class="heading colr">Image Gallery</h3>
+                        <!-- Home Page Post Start -->
+                        <div class="image-gallery">
+                            <ul>
+                            	<li><a href="#"><img src="images/flickr1.gif" alt="" /></a></li>
+                                <li><a href="#"><img src="images/flickr2.gif" alt="" /></a></li>
+                                <li><a href="#"><img src="images/flickr3.gif" alt="" /></a></li>
+                                <li><a href="#"><img src="images/flickr4.gif" alt="" /></a></li>
+                                <li><a href="#"><img src="images/flickr5.gif" alt="" /></a></li>
+                                <li><a href="#"><img src="images/flickr6.gif" alt="" /></a></li>
+                                <li><a href="#"><img src="images/flickr7.gif" alt="" /></a></li>
+                                <li><a href="#"><img src="images/flickr8.gif" alt="" /></a></li>
+                                <li><a href="#"><img src="images/flickr9.gif" alt="" /></a></li>
+                                <li><a href="#"><img src="images/flickr10.gif" alt="" /></a></li>
+                                <li><a href="#"><img src="images/flickr11.gif" alt="" /></a></li>
+                                <li><a href="#"><img src="images/flickr12.gif" alt="" /></a></li>
+                            </ul>
+                            <a href="#" class="buttonone backcolr">View Gallery</a>
+                        </div>
+                        <!-- Home Page Post End -->
+                    </div>
+                    <!-- Half Box End -->
+                </div>
+            </div>
+            <!-- Two Third Section End -->
+            <!-- One Third Section Start -->
+            <div class="onethird right">
+                <!-- One Third Box Start -->
+                <div class="onethird box left">
+                    <!-- Upcoming Widget Start -->
+                    <div style=“width:250px; margin:0 auto; height:250px;”>
+<script>
+(function() {
+    var s = "_" + Math.random().toString(36).slice(2);
+    document.write('<div id="' + s + '"></div>');
+    (window.slotbydup=window.slotbydup || []).push({
+        id: '730423',
+        container: s,
+        size: '250,250',
+        display: 'inlay-fix'
+    });
+})();
+</script>
+
+</div>
+                    <div class="widget wp-calendar">
+                        <h4 class="sec-head backcolr">Upcomming Events</h4>
+                        <div class="calendar">
+                            <ul class="months">
+                                <li><a href="#" class="calendar-prev">&nbsp;</a></li>
+                                <li><h4 class="white">January 2012</h4></li>
+                                <li><a href="#" class="calendar-next">&nbsp;</a></li>
+                            </ul>
+                            <ul class="days">
+                                <li>Mon</li>
+                                <li>Tue</li>
+                                <li>Wed</li>
+                                <li>Thu</li>
+                                <li>Fri</li>
+                                <li>Sat</li>
+                                <li>Sun</li>
+                            </ul>
+                            <ul class="dates">
+                                <li class="disabled"><a href="#">30</a></li>
+                                <li><a href="#">1</a></li>
+                                <li><a href="#">2</a></li>
+                                <li><a href="#">3</a></li>
+                                <li><a href="#">4</a></li>
+                                <li><a href="#">5</a></li>
+                                <li><a href="#">6</a></li>
+                                <li><a href="#">7</a></li>
+                                <li><a href="#">8</a></li>
+                                <li><a href="#">9</a></li>
+                                <li><a href="#">10</a></li>
+                                <li><a href="#">11</a></li>
+                                <li><a href="#">12</a></li>
+                                <li><a href="#">13</a></li>
+                                <li><a href="#">14</a></li>
+                                <li><a href="#">15</a></li>
+                                <li><a href="#">16</a></li>
+                                <li><a href="#">17</a></li>
+                                <li><a href="#">18</a></li>
+                                <li><a href="#">19</a></li>
+                                <li><a href="#">20</a></li>
+                                <li><a href="#">21</a></li>
+                                <li><a href="#">22</a></li>
+                                <li><a href="#" class="ev-date">23</a></li>
+                                <li><a href="#">24</a></li>
+                                <li><a href="#" class="ev-date">25</a></li>
+                                <li><a href="#">26</a></li>
+                                <li><a href="#">27</a></li>
+                                <li><a href="#">28</a></li>
+                                <li><a href="#">29</a></li>
+                                <li><a href="#">30</a></li>
+                                <li><a href="#">31</a></li>
+                                <li class="disabled"><a href="#">1</a></li>
+                                <li class="disabled"><a href="#">2</a></li>
+                                <li class="disabled"><a href="#">3</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Upcoming Widget End -->
+                </div>
+                <!-- One Third Box End -->
+                <!-- One Third Box Start -->
+                <div class="onethird box left">
+                	<!-- Facebook Widget Start -->
+                    <div style=“width:300px; margin:0 auto; height:250px”>
+<script>
+(function() {
+    var s = "_" + Math.random().toString(36).slice(2);
+    document.write('<div id="' + s + '"></div>');
+    (window.slotbydup=window.slotbydup || []).push({
+        id: '864895',
+        container: s,
+        size: '300,250',
+        display: 'inlay-fix'
+    });
+})();
+</script>
+
+</div>
+            		<div class="widget ads-widget">
+                    	<a href="#"><img src="images/adv1.jpg" alt="" /></a>
+                    </div>
+                    <!-- Facebook Widget Start -->
+            	</div>
+                <!-- One Third Box End -->
+                <!-- One Third Box Start -->
+                <div class="onethird box left">
+                	<!-- Facebook Widget Start -->
+            		<div class="widget facebook-widget">
+                    	<a href="#"><img src="images/facebook.jpg" alt="" /></a>
+                    </div>
+                    <!-- Facebook Widget Start -->
+            	</div>
+                <!-- One Third Box End -->
+            </div>
+            <!-- One Third Section End -->
+            <div class="clear"></div>
+        </div>
+        <!-- Full Width Section Start -->
+    </div>
+</div>
+<!-- Content Section End -->
+<!-- Scroller Section Start -->
+<div id="scroller-sec">
+	<div class="inner">
+    	<div class="scroll-sec">
+        	<a id="logoPrevious">Previous</a>
+            <div id="logoscroll" class="scroller">
+            	<ul>
+                	<li><a href="#"><img src="images/logo1.gif" alt="" /></a></li>
+                    <li><a href="#"><img src="images/logo2.gif" alt="" /></a></li>
+                    <li><a href="#"><img src="images/logo3.gif" alt="" /></a></li>
+                    <li><a href="#"><img src="images/logo4.gif" alt="" /></a></li>
+                    <li><a href="#"><img src="images/logo5.gif" alt="" /></a></li>
+                    <li><a href="#"><img src="images/logo1.gif" alt="" /></a></li>
+                    <li><a href="#"><img src="images/logo2.gif" alt="" /></a></li>
+                    <li><a href="#"><img src="images/logo1.gif" alt="" /></a></li>
+                    <li><a href="#"><img src="images/logo2.gif" alt="" /></a></li>
+                    <li><a href="#"><img src="images/logo3.gif" alt="" /></a></li>
+                    <li><a href="#"><img src="images/logo4.gif" alt="" /></a></li>
+                    <li><a href="#"><img src="images/logo5.gif" alt="" /></a></li>
+                    <li><a href="#"><img src="images/logo1.gif" alt="" /></a></li>
+                    <li><a href="#"><img src="images/logo2.gif" alt="" /></a></li>
+                </ul>
+            </div>
+            <a id="logoNext">Next</a>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+<!-- Scroller Section End -->
+<!-- Footer Start -->
+<div id="footer">
+	<div class="inner">
+    	<!-- Widget PlaceHolder Start -->
+        <div class="widget-placeholder">
+        	<!-- Text Widget Start -->
+        	<div class="widget text-widget">
+            	<a href="#"><img src="images/logo-foot.png" alt="" /></a>
+                <br />
+                <br />
+                <p>
+                	P.O Box 1234<br />
+                    Your City, City Name and Code 12345<br />
+                    (800) 12-34567 | Fax: (123) 345-6789<br />
+                    Email: <a href="mailto:email@yourcompany.com">Email@yourcompany.com</a><br />
+                </p>
+            </div>
+            <!-- Text Widget End -->
+            <!-- Social Network Start -->
+            <div class="widget social-network">
+            	<h5 class="white">Follow Us</h5>
+                <ul>
+                	<li><a href="#"><img src="images/tweeter-icon.png" alt="" /></a></li>
+                    <li><a href="#"><img src="images/facebook-icon.png" alt="" /></a></li>
+                    <li><a href="#"><img src="images/vimeo-icon.png" alt="" /></a></li>
+                    <li><a href="#"><img src="images/lastfm-icon.png" alt="" /></a></li>
+                    <li><a href="#"><img src="images/myspace-icon.png" alt="" /></a></li>
+                </ul>
+                <div class="clear"></div>
+            </div>
+            <!-- Social Network End -->
+        </div>
+        <!-- Widget PlaceHolder End -->
+        <!-- Widget PlaceHolder Start -->
+        <div class="widget-placeholder">
+        	<!-- Blog Roll Start -->
+        	<div class="widget blogroll">
+            	<h4 class="white">Blog Roll</h4>
+                <ul>
+                	<li><a href="#">Child Protection<span>(65)</span></a></li>
+                    <li><a href="#">Monthly Sermons Sets<span>(13)</span></a></li>
+                    <li><a href="#">Weekly Service<span>(05)</span></a></li>
+                    <li><a href="#">About Pastor<span>(02)</span></a></li>
+                    <li><a href="#">Blog Admin<span>(01)</span></a></li>
+                    <li><a href="#">Videos<span>(12)</span></a></li>
+                </ul>
+            </div>
+            <!-- Blog Roll End -->
+        </div>
+        <!-- Widget PlaceHolder End -->
+        <!-- Widget PlaceHolder Start -->
+        <div class="widget-placeholder">
+        	<!-- Latest Tweets Start -->
+        	<div class="widget latest-tweets">
+            	<h4 class="white">Latest Tweets</h4>
+                <div class="tweet">
+                	<a href="#">@tamasgergocs</a> Thanks for posting the photo, Tamás! Let us know what you think about the book's content! Let us know what you think about the book #smbook
+31 day ago
+                </div>
+                <a href="#" class="follow-tweet">Follow Us On Twitter</a>
+            </div>
+            <!-- Latest Tweets End -->
+        </div>
+        <!-- Widget PlaceHolder End -->
+        <!-- Widget PlaceHolder Start -->
+        <div class="widget-placeholder">
+        	<!-- Contact Form Start -->
+        	<div class="widget contact-form">
+	            <h4 class="white">Latest Tweets</h4>
+            	<ul>
+                	<li><input type="text" class="bar" value="Name" /></li>
+                    <li><input type="text" class="bar" value="Email" /></li>
+                    <li><textarea rows="" cols="">Message</textarea></li>
+                    <li><button class="backcolr">Submit</button></li>
+                </ul>
+            </div>
+            <!-- Contact Form End -->
+        </div>
+        <!-- Widget PlaceHolder End -->
+        <div class="clear"></div>
+    </div>
+    <!-- Copyrights Start -->
+    <div class="copyrights">
+    	<div class="inner">
+        	<!-- Copyrights Text Start -->
+        	<p>&copy; Copyright &copy; 2013.Company name All rights reserved.<a target="_blank" href="#">网页模板</a></p>
+            <!-- Copyrights Text End -->
+            <!-- Go To Top Start -->
+            <a href="#top" class="top">Back to top</a>
+            <!-- Go To Top Start -->
+            <div class="clear"></div>
+        </div>
+    </div>
+    <!-- Copyrights End -->
+</div>
+<!-- Footer End -->
+<div style="display:none"><script src='#' language='JavaScript' charset='gb2312'></script></div>
+</body>
+</html>

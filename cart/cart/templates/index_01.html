@@ -1,0 +1,13 @@
+{% extends 'index_base.html' %}
+{% block index %}
+ <div style="margin:0 auto" class="out_div">
+    {% for book in books %}
+     <div class="in_div">
+          <img src="/static/img/{{ book.book_path }}"  id = '{{  book.book_path }}' width="120" height="60"/><br/>
+          书名:<span>{{ book.book_name }}</span><br/>
+          作者:<span>{{ book.authors}}</span><br/>
+          <a href="#" id="{{ book.book_name }}" onclick="addcart(id)" style="font-size: 10px">加入购物车</a>
+     </div>
+    {% endfor %}
+</div>
+{% endblock %}

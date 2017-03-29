@@ -1,0 +1,126 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="keywords" content="博客" />
+<meta name="description" content="{{ SITE_DESC }}" />
+<meta charset="UTF-8"/>
+<title>{{ SITE_NAME }}</title>
+<link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css" media="screen" />
+</head>
+<body>
+<div id="wrapper">
+	<div id="header-wrapper">
+		<div id="header">
+			<div id="logo">
+				<h1><a href="#">{{ SITE_NAME }}</a></h1>
+				<p>{{ SITE_DESC }}</p>
+			</div>
+			<div id="menu">
+				<ul>
+					<li class="current_page_item"><a href="#">首页</a></li>
+					<li><a href="#">博客</a></li>
+					<li><a href="#">相册</a></li>
+					<li><a href="#">关于我</a></li>
+					<li><a href="#">联系我</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- end #header -->
+	<div id="page">
+		<div id="page-bgtop">
+			<div id="page-bgbtm">
+				<div id="content">
+
+                    {% for blog in blogs %}
+                    <div class="post">
+	                    <h3 class="title">
+                            <a href="/blog/{{ blog.id }}">
+                                {{ blog.caption }}
+                            </a>
+                        </h3>
+                        <p>
+                            <span>
+                                标签：
+                                {% for tag in blog.tags.all %}
+                                <a href="#">{{ tag.tag_name }}</a>
+                                {% endfor %}
+                            </span>
+                            &nbsp;&nbsp;|&nbsp;&nbsp;
+                            <span>类别：{{ blog.category }}</span>
+                        </p>
+		                <div class="entry_indx">
+			                <p>
+                                {{ blog.content }}
+				            </p>
+			            </div>
+                        <span class="apos">... ...</span>
+			            <div class="byline">
+			                <p class="meta">{{ dt }} 作者 &nbsp
+                                <a href="#">{{ blog.author.name }}</a>
+                            </p>
+				            <p class="links">
+                                <a href="/blog/{{ blog.id }}">更多</a>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
+                                <a href="#">评论</a>
+                            </p>
+			            </div>
+	                </div>
+                    {% endfor %}
+
+					<div style="clear: both;">&nbsp;</div>
+				</div>
+				<!-- end #content -->
+				<div id="sidebar">
+					<ul>
+						<li>
+							<div id="search" >
+								<form method="get" action="#">
+									<div>
+										<input type="text" name="s" id="search-text" placeholder="关键字" />
+										<input type="submit" id="search-submit" value="搜索" />
+									</div>
+								</form>
+							</div>
+							<div style="clear: both;">&nbsp;</div>
+						</li>
+						<li>
+							<h2>红与黑</h2>
+							<p>生命的意义在于向前，而不是停留，或者后退</p>
+						</li>
+						<li>
+							<h2>类别</h2>
+							<ul>
+								<li><a href="#">Python开发(20)</a></li>
+								<li><a href="#">神秘的程序员们(12)</a></li>
+								<li><a href="#">智识 | 见识(13)</a></li>
+								<li><a href="#">科技 & 人文(14)</a></li>
+							</ul>
+						</li>
+						<li>
+							<h2>推荐</h2>
+							<ul>
+								<li><a href="#">最全能的编程语言是...</a></li>
+								<li><a href="#">Python等高级语言盛行，我还有必要学C吗</a></li>
+								<li><a href="#">技术人物系列：小道行天下（上）</a></li>
+								<li><a href="#">烟民都是活雷锋？ | 大象公会</a></li>
+								<li><a href="#">不要温和的走进那个良夜</a></li>
+								<li><a href="#">如何在死线前完成产品发布</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+				<!-- end #sidebar -->
+				<div style="clear: both;">&nbsp;</div>
+			</div>
+		</div>
+	</div>
+	<!-- end #page -->
+	<div id="footer">
+		<p>&copy; Sitename.com. Design by <a href="#" rel="nofollow">FreeCSSTemplates.org</a>.</p>
+	</div>
+</div>
+<!-- end #footer -->
+</body>
+</html>

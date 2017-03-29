@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+     <table>
+         <tr>
+             <td>书名：</td><td>作者：</td><td>操作</td>
+         </tr>
+         {% for book in books %}
+         <tr>
+            <td>{{ book.book_name }}</td>
+             {% for author in book.authors.all %} <!-- 遍历author对象里面的作者,通过作者找出书 manytomany 一边有对象的的调用方法，另外一边有xxx_set 方法  -->
+                <td>{{ author.first_name  }}</td>
+             {% endfor %}
+                <td><a href="#">修改</a>||<a href="#">删除</a></td>
+         </tr>
+         {% endfor %}
+     </table>
+</body>
+</html>

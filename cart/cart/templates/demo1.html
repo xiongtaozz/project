@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="http://apps.bdimg.com/libs/jquery/1.11.1/jquery.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        //document.write(document.cookie)
+    </script>
+    <style>
+        .div{
+          width: 0;
+          height: 0;
+          overflow: hidden;
+          border: 50px solid white;
+          border-top-color: black;
+          position: relative;
+        }
+        .div:after{
+          content: "";
+          width: 0;
+          height: 0;
+          overflow: hidden;
+          border: 45px solid transparent;
+          border-top-color: white;
+          position: absolute;
+          top: -48px;
+          left: -45px;
+          z-index: 100;
+        }
+
+    </style>
+</head>
+<body>
+     <div class="div">
+
+     </div>
+</body>
+</html>

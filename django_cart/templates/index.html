@@ -1,0 +1,25 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <span>欢迎:{{ username }},<a href="/login/">退出</a></span>
+    <hr>
+     <div>
+         {% for book in books %}
+             <div>
+                 <img src="/static/{{ book.book_img }}" style="width: 80px;height: 100px" /><br/>
+                 <span>书名:{{ book.name }}</span><br/>
+                 <span>作者:{{ book.author }}</span><br/>
+                 <span>价格:{{ book.price }}</span>
+                 <form method="post" action="/addcart/{{ book.id }}">
+                      <input type="submit" value="加入购物车">
+                 </form>
+             </div>
+         {% endfor %}
+     </div>
+</body>
+</html>

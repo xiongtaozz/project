@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="../static/css/test02.css" rel="stylesheet" type="text/css">
+    <title>用户注册</title>
+    <!--<script type="text/javascript" src="../static/js/jquery.min.js"></script>-->
+    <script type="text/javascript">
+
+        function userFocus(){
+            userNameId = document.getElementById('userNameId') //div
+            userNameId.className = 'import_prompt'
+            userNameId.innerHTML= "1、由字母、数字、下划线、点、减号组成"
+                                 +"<br/>"+
+                                 "2、只能以数字、字母开头或结尾，且长度为4-18"
+        }
+
+        /*$(function(){
+            $('#userName').on('focus',function(){
+                userNameId = $('#userNameId')
+                userNameId.attr('class', 'import_prompt')
+                userNameId.html( "1、由字母、数字、下划线、点、减号组成"
+                                     +"<br/>"+
+                                     "2、只能以数字、字母开头或结尾，且长度为4-18")
+            })
+        })*/
+        function userBlur() {
+            userName = document.getElementById('userName')
+            userNameId = document.getElemenuserNameId.className = 'ok_prompt'
+            reg = /\w{6,18}/
+            if (reg.test(userName.value)) {
+                userNameId.innerHTML = '用户名格式正确'
+            } else {
+                userNameId.className = 'error_prompt'
+                userNameId.innerHTML = '用户名非法'
+            }
+            tById('userNameId') //div
+
+        }
+
+       /*$(function(){
+           $('#userName').bind({
+               blur: function () {
+                    $('#userNameId').addClass('error_prompt')
+                    reg = /^\w{4,18}$/ //正则表达
+                    if ($('#userName').val() == null || $('#userName').val() ==''){
+                        $('#userNameId').innerHTML = '用户不能为空'
+                    }else{
+                        if(reg.test($('#userName').val())){
+                            $('#userNameId').addClass('ok_prompt')
+                            $('#userNameId').html('用户格式正确')
+                        }
+                    }
+               },
+               focus:function(){
+                    $('#userNameId').attr('class','import_prompt')
+                    $('#userNameId').html("1、由字母、数字、下划线、点、减号组成"
+                                          +"<br/>"+
+                                          "2、只能以数字、字母开头或结尾，且长度为4-18")
+
+               }
+           })
+       })*/
+
+        // 获取焦点事件完成
+/*        $(function(){
+            $('#userName').on('focus',function(){
+                $('#userNameId').attr('class','import_prompt')
+                $('#userNameId').html("1、由字母、数字、下划线、点、减号组成"
+                                     +"<br/>"+
+                                      "2、只能以数字、字母开头或结尾，且长度为4-18")
+            })
+        })
+
+        //失去焦点
+        $(function(){
+            $('#userName').on('blur',function(){
+                $('#userNameId').addClass('error_prompt')
+                reg = /^\w{4,18}$/ //正则表达
+                if ($('#userName').val() == null || $('#userName').val() ==''){
+                    $('#userNameId').innerHTML = '用户不能为空'
+                }else{
+                    if(reg.test($('#userName').val())){
+                        $('#userNameId').addClass('ok_prompt')
+                        $('#userNameId').html('用户格式正确')
+                    }
+                }
+            })
+        })
+*/
+        $(function(){
+            $('#pwd').bind({
+                focus: function(){
+                    $('#pwdId').attr('class','import_prompt')
+                    $('#pwdId').html('请输入6-16位密码')
+                },
+                blur:function(){
+                    // 注意这里是只判断了数字.因为无效
+                    var reg = /^\d{6,16}$/
+                    $('#pwdId').attr('class','error_prompt')
+                    if ($('#pwd').val() == null || $('#pwd').val() ==""){
+                        $('#pwdId').html('用户名密码不能为空,请重新输入')
+                    }else{
+                        if (reg.test($('#pwd').val())){
+                            $('#pwdId').attr('class','ok_prompt')
+                            $('#pwdId').html('密码输入正确')
+                        }
+                    }
+                }
+            });
+        })
+
+    //密码验证
+$("button").bind({
+    click:function(){
+        $("p").slideToggle();
+    },
+    mouseover:function(){
+        $("body").css("background-color","red");
+    },
+
+});
+    </script>
+</head>
+<body>
+<div id="header">
+    <img src="../static/images/register_logo.gif" alt="logo">
+</div>
+<div id="main">
+    <table width="100%" cellpadding="0" border="0">
+        <tr>
+            <td class="bg bg_top_left"></td>
+            <td class="bg_top"></td>
+            <td class="bg bg_top_right"></td>
+        </tr>
+        <tr>
+            <td class="bg_left"></td>
+            <td class="content">
+                <form action="" method="post">
+                    <dl>
+                        <dt>通行证用户名：</dt>
+                        <dd><input type="text" class="inputs userWidth" id="userName" onfocus="userFocus()" onblur="userBlur()"/> @163.com</dd>
+                        <div id="userNameId"></div>
+                    </dl>
+                    <dl>
+                        <dt>登陆密码：</dt>
+                        <dd><input type="password" class="inputs" id ='pwd'/></dd>
+                        <div id = 'pwdId'></div>
+                    </dl>
+                    <dl>
+                        <dt>重复登录密：</dt>
+                        <dd><input type="password" class="inputs" id = 'rePwd' onfocus="rePwdFocus()" onblur="rePwdBlur()"/></dd>
+                        <div id ='rePwdId'></div>
+                    </dl>
+                    <dl>
+                        <dt>性别：</dt>
+                        <dd><input type="radio" checked="checked" name="sex"/>男<input name="sex" type="radio"/>女</dd>
+                    </dl>
+                    <dl>
+                        <dt>真实姓名：</dt>
+                        <dd><input type="text" class="inputs"/></dd>
+                    </dl>
+                    <dl>
+                        <dt>昵称：</dt>
+                        <dd><input type="text" class="inputs"/></dd>
+                    </dl>
+                    <dl>
+                        <dt>关联手机号：</dt>
+                        <dd><input type="text" class="inputs"/></dd>
+                    </dl>
+                    <dl>
+                        <dt>保密邮箱：</dt>
+                        <dd><input type="text" class="inputs"/></dd>
+                    </dl>
+                    <dl>
+                        <dt></dt>
+                        <dd><input type="image" src="../static/images/button.gif"/></dd>
+                    </dl>
+                </form>
+            </td>
+            <td class="bg_right"></td>
+        </tr>
+        <tr>
+            <td class="bg bg_end_left"></td>
+            <td class="bg_end"></td>
+            <td class="bg bg_end_right"></td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

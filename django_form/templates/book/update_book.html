@@ -1,0 +1,13 @@
+{% extends 'depot/base.html' %}
+
+{% block updatebook %}
+    <form method="post" action=".">
+        {% csrf_token %}
+        <table>
+            <tr><td><lable for='id_title'>标题:</lable></td><td>{{ form.title }}</td><td>{{ form.title.errors }}</td></tr>
+            <tr><td><lable for='id_price'>价格:</lable></td><td>{{ form.price }}</td><td>{{ form.price.errors }}</td></tr>
+            <tr><td><lable for='id_photo'>作者:</lable></td><td>{{ form.authors }}</td><td>{{ form.authors.errors }}</td></tr>
+            <tr><td><input type="submit" value="注册" /></td><td><input type="reset" value="重置"/></td><td></td></tr>
+        </table>
+    </form>
+{% endblock %}

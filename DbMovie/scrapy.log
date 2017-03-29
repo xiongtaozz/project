@@ -1,0 +1,154 @@
+2016-07-27 21:44:25 [scrapy] INFO: Scrapy 1.1.1 started (bot: Dbmovie)
+2016-07-27 21:44:25 [scrapy] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'Dbmovie.spiders', 'SPIDER_MODULES': ['Dbmovie.spiders'], 'LOG_FILE': 'scrapy.log', 'BOT_NAME': 'Dbmovie'}
+2016-07-27 21:44:25 [scrapy] INFO: Enabled extensions:
+['scrapy.extensions.logstats.LogStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.corestats.CoreStats']
+2016-07-27 21:44:27 [scrapy] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.chunked.ChunkedTransferMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2016-07-27 21:44:27 [scrapy] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2016-07-27 21:44:28 [scrapy] INFO: Enabled item pipelines:
+['Dbmovie.pipelines.DownloadImagesPipeline',
+ 'Dbmovie.pipelines.DownloadInfoPipeline']
+2016-07-27 21:44:28 [scrapy] INFO: Spider opened
+2016-07-27 21:44:28 [scrapy] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2016-07-27 21:44:28 [scrapy] DEBUG: Telnet console listening on 127.0.0.1:6023
+2016-07-27 21:44:28 [scrapy] INFO: Closing spider (finished)
+2016-07-27 21:44:28 [scrapy] INFO: Dumping Scrapy stats:
+{'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2016, 7, 27, 13, 44, 28, 161000),
+ 'log_count/DEBUG': 1,
+ 'log_count/INFO': 7,
+ 'start_time': datetime.datetime(2016, 7, 27, 13, 44, 28, 141000)}
+2016-07-27 21:44:28 [scrapy] INFO: Spider closed (finished)
+2016-07-27 21:45:58 [scrapy] INFO: Scrapy 1.1.1 started (bot: Dbmovie)
+2016-07-27 21:45:58 [scrapy] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'Dbmovie.spiders', 'SPIDER_MODULES': ['Dbmovie.spiders'], 'LOG_FILE': 'scrapy.log', 'BOT_NAME': 'Dbmovie'}
+2016-07-27 21:45:58 [scrapy] INFO: Enabled extensions:
+['scrapy.extensions.logstats.LogStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.corestats.CoreStats']
+2016-07-27 21:46:00 [scrapy] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.chunked.ChunkedTransferMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2016-07-27 21:46:00 [scrapy] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2016-07-27 21:46:01 [scrapy] INFO: Enabled item pipelines:
+['Dbmovie.pipelines.DownloadImagesPipeline',
+ 'Dbmovie.pipelines.DownloadInfoPipeline']
+2016-07-27 21:46:01 [scrapy] INFO: Spider opened
+2016-07-27 21:46:01 [scrapy] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2016-07-27 21:46:01 [scrapy] DEBUG: Telnet console listening on 127.0.0.1:6023
+2016-07-27 21:46:01 [scrapy] INFO: Closing spider (finished)
+2016-07-27 21:46:01 [scrapy] INFO: Dumping Scrapy stats:
+{'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2016, 7, 27, 13, 46, 1, 148000),
+ 'log_count/DEBUG': 1,
+ 'log_count/INFO': 7,
+ 'start_time': datetime.datetime(2016, 7, 27, 13, 46, 1, 139000)}
+2016-07-27 21:46:01 [scrapy] INFO: Spider closed (finished)
+2016-07-27 21:51:46 [scrapy] INFO: Scrapy 1.1.1 started (bot: Dbmovie)
+2016-07-27 21:51:46 [scrapy] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'Dbmovie.spiders', 'SPIDER_MODULES': ['Dbmovie.spiders'], 'LOG_FILE': 'scrapy.log', 'BOT_NAME': 'Dbmovie'}
+2016-07-27 21:51:46 [scrapy] INFO: Enabled extensions:
+['scrapy.extensions.logstats.LogStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.corestats.CoreStats']
+2016-07-27 21:51:47 [scrapy] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.chunked.ChunkedTransferMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2016-07-27 21:51:47 [scrapy] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2016-07-27 21:51:47 [scrapy] INFO: Enabled item pipelines:
+['Dbmovie.pipelines.DownloadImagesPipeline',
+ 'Dbmovie.pipelines.DownloadInfoPipeline']
+2016-07-27 21:51:47 [scrapy] INFO: Spider opened
+2016-07-27 21:51:47 [scrapy] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2016-07-27 21:51:47 [scrapy] DEBUG: Telnet console listening on 127.0.0.1:6023
+2016-07-27 21:51:47 [scrapy] INFO: Closing spider (finished)
+2016-07-27 21:51:47 [scrapy] INFO: Dumping Scrapy stats:
+{'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2016, 7, 27, 13, 51, 47, 698000),
+ 'log_count/DEBUG': 1,
+ 'log_count/INFO': 7,
+ 'start_time': datetime.datetime(2016, 7, 27, 13, 51, 47, 691000)}
+2016-07-27 21:51:47 [scrapy] INFO: Spider closed (finished)
+2016-07-27 21:53:35 [scrapy] INFO: Scrapy 1.1.1 started (bot: Dbmovie)
+2016-07-27 21:53:35 [scrapy] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'Dbmovie.spiders', 'SPIDER_MODULES': ['Dbmovie.spiders'], 'LOG_FILE': 'scrapy.log', 'BOT_NAME': 'Dbmovie'}
+2016-07-27 21:54:17 [scrapy] INFO: Scrapy 1.1.1 started (bot: Dbmovie)
+2016-07-27 21:54:17 [scrapy] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'Dbmovie.spiders', 'SPIDER_MODULES': ['Dbmovie.spiders'], 'LOG_FILE': 'scrapy.log', 'BOT_NAME': 'Dbmovie'}
+2016-07-27 21:54:17 [scrapy] INFO: Enabled extensions:
+['scrapy.extensions.logstats.LogStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.corestats.CoreStats']
+2016-07-27 21:54:18 [scrapy] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.chunked.ChunkedTransferMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2016-07-27 21:54:18 [scrapy] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2016-07-27 21:54:18 [scrapy] INFO: Enabled item pipelines:
+['Dbmovie.pipelines.DownloadImagesPipeline',
+ 'Dbmovie.pipelines.DownloadInfoPipeline']
+2016-07-27 21:54:18 [scrapy] INFO: Spider opened
+2016-07-27 21:54:18 [scrapy] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2016-07-27 21:54:18 [scrapy] DEBUG: Telnet console listening on 127.0.0.1:6023
+2016-07-27 21:54:18 [scrapy] INFO: Closing spider (finished)
+2016-07-27 21:54:18 [scrapy] INFO: Dumping Scrapy stats:
+{'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2016, 7, 27, 13, 54, 18, 787000),
+ 'log_count/DEBUG': 1,
+ 'log_count/INFO': 7,
+ 'start_time': datetime.datetime(2016, 7, 27, 13, 54, 18, 780000)}
+2016-07-27 21:54:18 [scrapy] INFO: Spider closed (finished)

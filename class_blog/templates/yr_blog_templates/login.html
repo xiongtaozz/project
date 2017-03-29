@@ -1,0 +1,21 @@
+<html>
+<head>
+    <title>Contact us</title>
+</head>
+<body>
+    <h1>Contact us</h1>
+    {% if form.errors %}
+        <p style="color: red;">
+            {# pulralize 是filter，用来判断是否为添加's'来表示单词的复数形式#}
+            Please correct the error{{ form.errors|pluralize }} below.
+        </p>
+    {% endif %}
+    <form action="" method="post">
+        <table>
+            {# 可以使用as_ul, as_p来改变格式 #}
+            {{ form.as_table }}
+        </table>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

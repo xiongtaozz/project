@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <table>
+        {% for st in stus %}
+        <tr>
+            <td>
+                {{ st.name }} &nbsp;学生:
+            </td>
+        </tr>
+       <tr>
+           {% for te in st.techers.all %}
+           <td> {{ te.name }}</td>
+           {%endfor  %}
+       </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+</head>
+<body>
+    <h3><a href="{% url 'login' %}">登录</h3>
+    <h2>登陆用户：{{ request.user.username }}</h2>
+    {% if request.user.is_authenticated %}
+        <p><a href="{% url 'logout' %}">登出</a></p>
+    {% endif %}
+
+    <h3><a href="{% url 'users' %}">个人页面</a></h3>
+    <h2><a href="{% url 'create_question' %}">提问</a></h2>
+    <h2>问题列表</h2>
+    <ul>
+        {% for question in question_list %}
+        <li>
+            <p>
+                {{ question.count }}
+                <a href="{% url 'question_detail' question.id %}" target="_blank">{{ question.title }}</a>
+            </p>
+            <p>{{ question.tag }} {{ question.created }} by {{ question.user.username }}</p>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
